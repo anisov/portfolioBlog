@@ -6,7 +6,9 @@ const gulp = require('gulp');
 const rename = require('gulp-rename');
 const del = require('del');
 const browserSync = require('browser-sync').create();
-const plumber = require('gulp-plumber');
+const reload = browserSync.reload;
+const plumber = require('gulp-plumber'),
+    cached = require('gulp-cached');
 
 //html, pug
 const pug = require('gulp-pug');
@@ -26,6 +28,14 @@ const groupMediaQueries = require('gulp-group-css-media-queries');
 const objectFitImages = require('postcss-object-fit-images');
 const sourcemaps = require('gulp-sourcemaps');
 
+//svgSpirte
+const svgstore = require('gulp-svgstore'),
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio');
+
+//png-sprite
+const spritesmith = require('gulp.spritesmith');
+
 //Доп плагины для настройки
 const notify = require('gulp-notify');
 const gulpIf = require('gulp-if');
@@ -33,7 +43,8 @@ const gulpIf = require('gulp-if');
 const paths = {
     root: './build',
     templates:{
-        pages: 'src/pug/**/*.pug',
+        pages: 'src/templates/pages/**/*.pug',
+        watch:'src/templates/**/*',
         dest:'build/'
     },
     html:{
@@ -42,10 +53,11 @@ const paths = {
     },
     styles:{
         src: 'src/scss/main.scss',
+        watch:'src/scss/**/*',
         dest:'build/css/'
     },
     images: {
-        src: 'src/img/**/*.{jpg,jpeg,gif,png,svg}',
+        src: ['src/img/**/*.{jpg,jpeg,gif,png,svg}','!src/img/sprite', '!src/img/png-sprite'],
         dest: 'build/img/'
     },
     scripts: {
@@ -55,6 +67,16 @@ const paths = {
     fonts: {
         src: 'src/fonts/**/*.{woff,woff2}',
         dest: 'build/fonts/'
+    },
+    svgSprite:{
+        src:'src/img/sprite/**/*.svg',
+        dest:'build/img/sprite'
+        },
+    spritePng:{
+        src: 'src/img/png-sprite/**/*.png',
+        dist: 'build/img/png-sprite',
+        imgLocation:'../img/png-sprite/sprite.png',
+        distFile: 'src/scss/layout'
     }
 };
 
@@ -80,7 +102,9 @@ function styles() {
         .pipe(sassGlob())
         .pipe(sourcemaps.init())
         .pipe(gulpIf(isDev, sourcemaps.init()))// Нужен для *.scss в import
-        .pipe(sass()) //{outputStyle:'compressed'}
+        .pipe(sass({
+            includePaths: require('node-normalize-scss').includePaths
+        })) //{outputStyle:'compressed'}
         .pipe(postcss(postCssPlugins))
         //.pipe(groupMediaQueries())
         .pipe(cleanCss())
@@ -139,17 +163,53 @@ function fonts() {
 
 }
 
+// SVG sprite
+function svgSprite() {
+	return gulp.src(paths.svgSprite.src)
+		.pipe(plumber(function(error) {
+			gutil.log(gutil.colors.red(error.message));
+			this.emit('end');
+		}))
+		.pipe(svgmin())
+		.pipe(svgstore())
+		.pipe(cheerio({
+			run: function ($, file) {
+				$('svg').addClass('hide');
+				$('[fill]').removeAttr('fill');
+			},
+			parserOptions: { xmlMode: true }
+		}))
+		.pipe(cached('svg-sprite'))
+        .pipe(gulp.dest(paths.svgSprite.dest))
+		.pipe(reload({stream: true}));
+};
+
+// PNG sprite
+function pngSprite() {
+    var spriteData = gulp.src(paths.spritePng.src).pipe(spritesmith({
+      imgName: 'sprite.png',
+      cssName: 'sprite.css',
+      cssFormat: 'css',
+      imgPath: paths.spritePng.imgLocation,
+      padding: 70
+    }));
+    return spriteData.img.pipe(gulp.dest(paths.spritePng.dist)),
+    spriteData.css.pipe(gulp.dest(paths.spritePng.distFile));
+  };
+
 function clean() {
     return del(paths.root);
 }
 
 function watch() {
-    gulp.watch(paths.templates.src, pugHtml);
-    gulp.watch(paths.styles.src, styles);
+    gulp.watch(paths.templates.watch, pugHtml);
+    gulp.watch(paths.styles.watch, styles);
     gulp.watch(paths.html.pages, html);
     gulp.watch(paths.images.src, images);
     gulp.watch(paths.scripts.src, scripts);
     gulp.watch(paths.fonts.src, fonts);
+    gulp.watch(paths.spritePng.src, pngSprite);
+    gulp.watch(paths.svgSprite.src, svgSprite);
 }
 
 //Локальный  сервер + livereload
@@ -162,12 +222,12 @@ function server() {
 
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles, pugHtml, html, images, scripts,fonts),
+    gulp.parallel(styles, pugHtml, html, images, scripts, fonts, pngSprite, svgSprite),
 ));
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, pugHtml, html, images, scripts,fonts),
+    gulp.parallel(styles, pugHtml, html, images, scripts, fonts, pngSprite, svgSprite),
     gulp.parallel(watch, server)
 ));
 
@@ -179,6 +239,9 @@ exports.clean = clean;
 exports.images = images;
 exports.fonts = fonts;
 exports.server = server;
+exports.watch = watch;
+exports.svg = svgSprite;
+exports.png = pngSprite;
 
 /*
 const useref = require('gulp-useref');

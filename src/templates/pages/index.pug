@@ -1,0 +1,27 @@
+extends ../base
+include ../config/_mixins
+block variables
+  - var title = 'Главная страница'
+  
+block content
+    section.welcome
+        a.welcome__auth(href="") Авторизоваться
+        .entry
+            .entry__img
+            .entry__name Владимир Астахов
+            .entry__desc Личный сайт веб разработчика
+            .entry__social
+                ul.entry__social-list
+                    - var socials = ['vk', 'github', 'in']
+                    each social in socials 
+                        li.entry__icon
+                            .entry__icon-box
+                                +svgIcon('entry__svg', social)
+            .entry__tabs
+                ul.entry__tab-list
+                    each tab in [['Мои работы', '/mywork'],['Обо мне', '/about'],['Блог', '/blog']]
+                        li.entry__tab-elem
+                            a.entry__tab-link(href=`${tab[1]}`) #{tab[0]}        
+                                        
+        footer.welcome__footer © Владимир Астахов | создано с любовью в LoftSchool | 2016         
+    

@@ -1,0 +1,151 @@
+.welcome{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position:  relative;
+    background: url('../img/welcome/welcome-bg.png') center center no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+.welcome__auth{
+    position: absolute;
+    text-align: center;
+    top: 24px;
+    right:100px;
+    width: 180px;
+    height: 45px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    border-radius: 12px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 45px;
+    text-decoration: none;
+}
+.entry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    min-height: 395px;
+    background-color: rgba(#122620, 0.6) ;
+}
+.entry__img{
+    margin-top: 40px;
+    width: 141px;
+    height: 141px;
+    border-radius: 100%;
+    background: url('../img/welcome/people-one.jpg') center center no-repeat ;
+
+}
+.entry__name{
+    text-align: center;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+    margin-top: 13px;
+}
+.entry__desc{
+margin-top: 4px;
+opacity: 0.8;
+color: #ffffff;
+font-family: Roboto;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+}
+.entry__social-list{
+    display: flex;
+}
+.entry__icon{
+    width: 31px;
+    height: 17px;
+    margin: 34px 20px 43px 6px;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+.entry__svg{
+    fill: #ffffff;
+    transition: .4s;   
+    opacity: 0.5;
+ 
+    &--vk{
+        width: 31px;
+        height: 17px;
+    }
+    &--github{
+        width: 26px;
+        height: 22px;
+    }
+    &--in{
+        width: 24px;
+        height: 22px;
+    }
+    &:hover{
+        fill:#4e8839;
+        opacity: 1;
+    }
+}
+.entry__svg--github{
+    width: 26px;
+    height: 22px;
+}
+.entry__tab-list{
+    display: flex;
+    flex-direction: row;
+}
+.entry__tab-elem{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center; //почему не работает
+    flex: 1;
+    height: 45px;
+    background-color: #6c9c5a;
+    border-right: solid 2px;
+    border-color:rgba(222, 227, 231, 0.5);
+    transition: background-color .4s;
+    &:first-child{
+        flex:6;
+    }
+    &:nth-child(2){
+        flex:5;
+    }
+    &:last-child{
+        border-right: solid 0;
+        flex:4;
+    }
+    &:hover{
+        background-color: #4e8839;
+    }
+}
+.entry__tabs{
+    width: 100%;
+}
+.entry__tab-link{
+    text-decoration: none; 
+    width: 100%;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 45px;
+    &:first-child{
+
+    }
+}
+.welcome__footer{
+    position: absolute;
+    bottom: 40px;
+    height: 17px;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+}
