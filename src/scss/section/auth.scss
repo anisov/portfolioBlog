@@ -1,0 +1,212 @@
+.entry__auth-title{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Sansus';
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 41px;
+    text-transform: uppercase;
+    margin-top: 33px;
+    &:after{
+        content: '';
+        display: block;
+        margin: 0 auto;
+        width: 89px;
+        height: 3px;
+        background-color: #ffffff;
+        margin-top: 18px;
+        margin-bottom: 32px;
+    }
+}
+.entry__elem{
+    position: relative;
+    margin-bottom:20px;
+    &:first-child{
+        margin-bottom:0; // почему не работает?
+    }
+}
+.entry__decorate{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #f0efe9;
+    border-radius: 26px 0 0 29px;
+}
+.entry__login{
+    padding-left: 63px;
+    width: 340px;
+    height: 45px;
+    background-color: #ffffff;
+    border-radius: 23px;
+    border:solid #ffffff;
+}
+.entry__svg-auth{
+    fill: #c4cbcd;
+}
+.entry__svg-auth--login{
+    width: 15px;
+    height: 17px;
+}
+.entry__password{
+    @extend .entry__login
+}
+.entry__svg-auth--password{
+    width: 18px;
+    height: 17px;
+}
+
+.entry__checkbox{
+    position: relative;
+}
+.entry__input-checkbox{
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    &:checked+.entry__checkbox-styled:after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        width: 88%;
+        height: 80%;
+        background: url('../img/sprite/check.svg');
+ 
+    }
+    &:checked+.entry__checkbox-styled{
+        background-color: #6c9c5a;
+        background-image:inherit;
+        border-color:#6c9c5a;
+    }
+}
+.entry__checkbox-styled{
+    vertical-align: middle;
+    margin-right: 10px;
+    position: relative;
+    display: inline-block;
+    width: 21px;
+    height: 20px;
+    border: 1px solid #cccccc;
+    background-image: linear-gradient(to bottom, #ededed 0%, #ffffff 100%);
+}
+.entry__checkbox-title{
+    vertical-align: middle;
+    width: 76px;
+    height: 13px;
+    opacity: 0.8;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.entry__robot{
+    margin-top: 10px;
+    opacity: 0.8;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 23.97px;
+}
+.entry__answer{
+    margin-bottom: 38px;
+    margin-top: 6px;
+}
+.entry__radio{
+    position: relative;
+    margin-right: 33px;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+.entry__radio-title{
+    opacity: 0.8;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.entry__input-radio{
+    position: absolute;
+    left: -99999px;
+    top: 0;
+}
+.entry__radio-styled{
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    border-radius: 50%;
+    background-color: #ffffff;
+    background-image: linear-gradient(to bottom, #ededed 0%, #ffffff 100%);
+    &:after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: #6c9c5a;
+    }
+}
+.entry__input-radio:checked {
+    &+.entry__radio-styled:after{
+        width: 8px;
+        height: 8px;
+    }
+    & .form__radio-title{
+        color: #f89513;
+    }
+}
+.entry__auth-botton{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center; //почему не работает
+    flex: 1;
+    height: 45px;
+    background-color: #6c9c5a;
+    border-right: solid 2px;
+    border-color:rgba(222, 227, 231, 0.5);
+    border-radius: 0px 0px 0px 8px;
+    transition: background-color .4s;
+    &:hover{
+        background-color: #4e8839;
+    }
+    &:last-child{
+        border-right: solid 0;
+        border-radius: 0 0 8px 0;
+    }
+}
+.entry__submit{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: #6c9c5a;
+    border: 0px;
+    border-radius: 0 0 8px 0;
+    border-color:rgba(222, 227, 231, 0.5);
+    transition: background-color .4s;
+
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 36px;
+    &:hover{
+        background-color: #4e8839;
+    }
+}

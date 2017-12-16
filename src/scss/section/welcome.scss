@@ -32,6 +32,7 @@
     width: 380px;
     min-height: 395px;
     background-color: rgba(#122620, 0.6) ;
+    border-radius: 8px;
 }
 .entry__img{
     margin-top: 40px;
@@ -74,7 +75,7 @@ line-height: 24px;
     fill: #ffffff;
     transition: .4s;   
     opacity: 0.5;
- 
+
     &--vk{
         width: 31px;
         height: 17px;
@@ -113,6 +114,7 @@ line-height: 24px;
     transition: background-color .4s;
     &:first-child{
         flex:6;
+        border-radius: 0 0 0 8px;
     }
     &:nth-child(2){
         flex:5;
@@ -120,6 +122,7 @@ line-height: 24px;
     &:last-child{
         border-right: solid 0;
         flex:4;
+        border-radius: 0 0 8px 0;
     }
     &:hover{
         background-color: #4e8839;

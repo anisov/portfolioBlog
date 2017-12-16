@@ -16,11 +16,10 @@ block entry
                 li.entry__icon
                     .entry__icon-box
                         +svgIcon('entry__svg', social)
-                        
+
 block entry__tabs
-    ul.entry__tab-list
-        each tab in [['Мои работы', '/mywork'],['Обо мне', '/about'],['Блог', '/blog']]
-            li.entry__tab-elem
-                a.entry__tab-link(href=`${tab[1]}`) #{tab[0]}        
+    each tab in [['Мои работы', '/mywork'],['Обо мне', '/about'],['Блог', '/blog']]
+        li.entry__tab-elem
+            a.entry__tab-link(href=`${tab[1]}`) #{tab[0]}        
                                     
                 
