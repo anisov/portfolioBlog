@@ -57,7 +57,7 @@ const paths = {
         dest:'build/css/'
     },
     images: {
-        src: ['src/img/**/*.{jpg,jpeg,gif,png,svg}','!src/img/sprite', '!src/img/png-sprite'],
+        src: ['!src/img/sprite', '!src/img/png-sprite','src/img/**/*.{jpg,jpeg,gif,png,svg}'],
         dest: 'build/img/'
     },
     scripts: {
@@ -141,6 +141,15 @@ function images() {
 //pug
 function pugHtml() {
     return gulp.src(paths.templates.pages)
+        .pipe(plumber({
+            errorHandler: function(err) {
+                notify.onError({
+                    title: 'Pug compilation error',
+                    message: err.message
+                })(err);
+                this.emit('end');
+            }
+        })) 
         .pipe(pug({pretty: true}))
         .pipe(gulp.dest(paths.root));
 }
