@@ -61,7 +61,7 @@ const paths = {
         dest: 'build/img/'
     },
     scripts: {
-        src: 'src/js/*.js',
+        src: 'src/js/**/*.js',
         dest: 'build/js/'
     },
     fonts: {

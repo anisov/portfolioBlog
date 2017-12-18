@@ -16,3 +16,16 @@
     clear: both;
   }
 }
+
+@mixin line($color){
+  &:after{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 89px;
+    height: 3px;
+    background-color: $color;
+    margin-top: 18px;
+    margin-bottom: 32px;
+  }
+}

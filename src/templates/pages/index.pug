@@ -9,13 +9,7 @@ block entry
     .entry__img
     .entry__name Владимир Астахов
     .entry__desc Личный сайт веб разработчика
-    .entry__social
-        ul.entry__social-list
-            - var socials = ['vk', 'github', 'in']
-            each social in socials 
-                li.entry__icon
-                    .entry__icon-box
-                        +svgIcon('entry__svg', social)
+    include ../includes/_social.pug
 
 block entry__tabs
     each tab in [['Мои работы', '/mywork'],['Обо мне', '/about'],['Блог', '/blog']]
