@@ -1,0 +1,29 @@
+.contacts{
+    width: 380px;
+    height: 312px;
+    background-color: #f4f5f0;
+    opacity: 0.85;
+    border-radius: 8px;
+}
+.contacts__title{
+    text-align: center;
+}
+.contacts__block{
+    display: flex;
+}
+@mixin iconSize($width, $height) {
+    width: $width;
+    height: $width;
+}
+.contacts__skype{
+    @include iconSize(24px ,24px)
+}
+.contacts__mail{
+    @include iconSize(23px ,16px)
+}
+.contacts__phone{
+    @include iconSize(17px ,20px)
+}
+.contacts__map_marker{
+    @include iconSize(16px ,21px)
+}

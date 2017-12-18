@@ -40,7 +40,6 @@
     height: 141px;
     border-radius: 100%;
     background: url('../img/welcome/people-one.jpg') center center no-repeat ;
-
 }
 .entry__name{
     text-align: center;
@@ -52,18 +51,18 @@
     margin-top: 13px;
 }
 .entry__desc{
-margin-top: 4px;
-opacity: 0.8;
-color: #ffffff;
-font-family: Roboto;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
+    margin-top: 4px;
+    opacity: 0.8;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
 }
-.entry__social-list{
+.social__list{
     display: flex;
 }
-.entry__icon{
+.social__icon{
     width: 31px;
     height: 17px;
     margin: 34px 20px 43px 6px;
@@ -71,7 +70,7 @@ line-height: 24px;
         margin-right: 0;
     }
 }
-.entry__svg{
+.social__svg{
     fill: #ffffff;
     transition: .4s;   
     opacity: 0.5;
@@ -93,7 +92,7 @@ line-height: 24px;
         opacity: 1;
     }
 }
-.entry__svg--github{
+.social__svg--github{
     width: 26px;
     height: 22px;
 }
