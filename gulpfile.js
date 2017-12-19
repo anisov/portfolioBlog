@@ -2,31 +2,31 @@
 let isDev = true;
 
 //gulp
-const gulp = require('gulp');
-const rename = require('gulp-rename');
-const del = require('del');
-const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
-const plumber = require('gulp-plumber'),
+const gulp = require('gulp'),
+    rename = require('gulp-rename'),
+    del = require('del'),
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload,
+    plumber = require('gulp-plumber'),
     cached = require('gulp-cached');
 
 //html, pug
 const pug = require('gulp-pug');
 
 //js
-const gulpWebpack = require('gulp-webpack');
-const webpack = require('webpack');
-const webpackCongig = require('./webpack.config');
+const gulpWebpack = require('gulp-webpack'),
+    webpack = require('webpack'),
+    webpackCongig = require('./webpack.config');
 
 //scss
-const sass = require('gulp-sass');
-const sassGlob = require('gulp-sass-glob');
-const postcss = require('gulp-postcss');
-const autoprefixer = require("autoprefixer");
-const cleanCss = require('gulp-cleancss');
-const groupMediaQueries = require('gulp-group-css-media-queries');
-const objectFitImages = require('postcss-object-fit-images');
-const sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass'),
+    sassGlob = require('gulp-sass-glob'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require("autoprefixer"),
+    cleanCss = require('gulp-cleancss'),
+    groupMediaQueries = require('gulp-group-css-media-queries'),
+    objectFitImages = require('postcss-object-fit-images'),
+    sourcemaps = require('gulp-sourcemaps');
 
 //svgSpirte
 const svgstore = require('gulp-svgstore'),
@@ -36,9 +36,14 @@ const svgstore = require('gulp-svgstore'),
 //png-sprite
 const spritesmith = require('gulp.spritesmith');
 
+//favicons
+const realFavicon = require ('gulp-real-favicon');
+// файл с настройками фавиконок
+const faviconData = 'src/img/favicons/faviconData.json';
+
 //Доп плагины для настройки
-const notify = require('gulp-notify');
-const gulpIf = require('gulp-if');
+const notify = require('gulp-notify'),
+    gulpIf = require('gulp-if');
 
 const paths = {
     root: './build',
@@ -57,7 +62,7 @@ const paths = {
         dest:'build/css/'
     },
     images: {
-        src: ['!src/img/sprite', '!src/img/png-sprite','src/img/**/*.{jpg,jpeg,gif,png,svg}'],
+        src: ['src/img/**/*.{jpg,jpeg,gif,png,svg}', 'src/img/sprite/*.*', '!src/img/png-sprite/*.*'],
         dest: 'build/img/'
     },
     scripts: {
@@ -77,6 +82,10 @@ const paths = {
         dist: 'build/img/png-sprite',
         imgLocation:'../img/png-sprite/sprite.png',
         distFile: 'src/scss/layout'
+    },
+    favicons:{
+        src: 'src/img/favicons/easymoblog.png',
+        dest: 'build/img/favicons'
     }
 };
 
@@ -206,6 +215,64 @@ function pngSprite() {
     spriteData.css.pipe(gulp.dest(paths.spritePng.distFile));
   };
 
+// Генератор фавиконок
+
+gulp.task('generate-favicon', function(done) {
+	realFavicon.generateFavicon({
+        masterPicture: paths.favicons.src,
+        dest: paths.favicons.dest,
+        iconsPath: '/',
+		design: {
+			ios: {
+				pictureAspect: 'noChange',
+				assets: {
+					ios6AndPriorIcons: false,
+					ios7AndLaterIcons: false,
+					precomposedIcons: false,
+					declareOnlyDefaultIcon: true
+				}
+			},
+			desktopBrowser: {},
+			windows: {
+				pictureAspect: 'noChange',
+				backgroundColor: '#da532c',
+				onConflict: 'override',
+				assets: {
+					windows80Ie10Tile: false,
+					windows10Ie11EdgeTiles: {
+						small: false,
+						medium: true,
+						big: false,
+						rectangle: false
+					}
+				}
+			},
+			androidChrome: {
+				pictureAspect: 'noChange',
+				themeColor: '#ffffff',
+				manifest: {
+					display: 'standalone',
+					orientation: 'notSet',
+					onConflict: 'override',
+					declared: true
+				},
+				assets: {
+					legacyIcon: false,
+					lowResolutionIcons: false
+				}
+			}
+		},
+		settings: {
+			scalingAlgorithm: 'Mitchell',
+			errorOnImageTooSmall: false
+		},
+		markupFile: faviconData
+	}, function() {
+		done();
+	});
+});
+
+
 function clean() {
     return del(paths.root);
 }
@@ -219,6 +286,7 @@ function watch() {
     gulp.watch(paths.fonts.src, fonts);
     gulp.watch(paths.spritePng.src, pngSprite);
     gulp.watch(paths.svgSprite.src, svgSprite);
+    //gulp.watch(paths.favicons.src, favicons);
 }
 
 //Локальный  сервер + livereload
@@ -226,17 +294,17 @@ function server() {
     browserSync.init({
         server: paths.root
     });
-    browserSync.watch(paths.root + '/**/*.*', browserSync.reload)
+    //browserSync.watch(paths.root + '/**/*.*')
 }
 
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles, pugHtml, html, images, scripts, fonts, pngSprite, svgSprite),
+    gulp.parallel(styles, pugHtml, html, images, scripts, fonts, pngSprite, svgSprite,),
 ));
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, pugHtml, html, images, scripts, fonts, pngSprite, svgSprite),
+    gulp.parallel(styles, pugHtml, html, images, scripts, fonts, pngSprite, svgSprite,),
     gulp.parallel(watch, server)
 ));
 
@@ -251,6 +319,7 @@ exports.server = server;
 exports.watch = watch;
 exports.svg = svgSprite;
 exports.png = pngSprite;
+//exports.favicons = favicons;
 
 /*
 const useref = require('gulp-useref');

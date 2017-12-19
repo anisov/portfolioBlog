@@ -1,0 +1,45 @@
+.contacts{
+    width: 380px;
+    height: 312px;
+    background-color: #f4f5f0;
+    opacity: 0.85;
+    border-radius: 8px;
+}
+.contacts__title{
+    margin-top: 28px;
+    text-align: center;
+    @include line(#566358)
+}
+.contacts__list{
+    margin-top: 31px;
+}
+.contacts__block{
+    display: flex;
+    margin-left:40px;
+    margin-bottom: 21px;
+}
+.contacts__skype{
+    @include iconSize(24px, 24px);
+    fill:#6c9c5a;
+}
+.contacts__envelope2{
+    @include iconSize(23px, 16px);
+    fill:#6c9c5a;
+}
+.contacts__phone{
+    @include iconSize(17px, 20px);
+    fill:#6c9c5a;
+}
+.contacts__map_marker{
+    @include iconSize(16px, 21px);
+    fill:#6c9c5a;
+}
+.contacts__info{
+    margin-left: 10px;
+    opacity: 0.8;
+    color: #566358;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}

@@ -1,0 +1,51 @@
+.promo{
+    position: relative;
+    background: url("../img/about/forest-bg.jpg") center center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.promo__block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.promo__img{
+    width: 141px;
+    height: 141px;
+    border-radius: 100%
+}
+.promo__my-img{
+    @extend .promo__img
+}
+.promo__name{
+    margin-top: 22px;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 41px;
+}
+.promo__desc{
+    margin-top: 1px;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.promo__down{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+.svg-down{
+    fill:#c2d4c9;
+    width: 26px;
+    height: 16px;
+    opacity: 0.7;
+}

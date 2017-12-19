@@ -9,7 +9,8 @@ block entry
     .entry__img
     .entry__name Владимир Астахов
     .entry__desc Личный сайт веб разработчика
-    include ../includes/_social.pug
+    .welcome__socials
+        include ../includes/_social.pug
 
 block entry__tabs
     each tab in [['Мои работы', '/mywork'],['Обо мне', '/about'],['Блог', '/blog']]

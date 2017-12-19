@@ -1,93 +1,78 @@
-extends ../base
+extends ../base-page.pug
 include ../config/_mixins
-block content
-    section.section.promo
-        header.header
-            .header__left
-                include ../includes/_social.pug
-            .navigation__short-menu
-                .short-menu
-        .promo__block
-            .promo__img: img.promo__my-img(src="img/welcome/people-one.jpg", alt="Я")
-            .promo__name Владимир Астахов
-            .promo__desc Личный сайт веб разработчика
-        
-        .promo__down
-            +svgIcon('svg-down','arrow_down')
+block down
+    .promo__down 
+        +svgIcon('svg-down','arrow_down')
 
-    section.section.about
-        .about__left
-            .triangle.triangle--white.about__left-triangle
-                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 450 85" preserveaspectratio="none" class="triangle-svg">
-                    <polygon class = "left" points="0,0  0,85   450.8,85  450.8,76"></polygon>
-                </svg>
-            .about__left-title
-                .about__left-svg: +svgIcon('about__bg-header','about_header')
-                .block-title Обо мне
-            .about__left-content
-                .about__user-photo: img.about__my-img(src="img/about/my-foto.jpg", alt="Я")
-                .about__user-title
-                    .block-subtitle Кто я
-                .about__user-desc
-                    p Я веб разработчик из Новосибирска. Мне 27 лет. 
-                    |Я занимаюсь разработкой современных сайтов 
-                    |и приложений. Мне нравится делать интересные 
-                    |и современные проекты.
-                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,
-                    |как тут всё классно и красиво!
-        .about__right
-            .triangle.triangle_fill_beige.about__right-triangle
-                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 450 85" preserveaspectratio="none" class="triangle-svg">
-                    <polygon class = "right" points="450,0   450,85   0,85   0,76"></polygon>
-                </svg>
-            .about__right-title
-                .block-subtitle Чем я могу быть вам полезен
-            .about__skills
-                .about__skills-desc Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи
-                    |на Backend. Но давайте по порядку.
-                .about__skills-block
-                    ul.skills-list
-                        each item in ['Frontend', 'Backend', 'Workflow']
-                            li.skills-list__item
-                                .skills-row
-                                    .skills-row__title #{item}
-                                    ul.skills-row__list
-                                        if item =='Frontend'
-                                            each skill in [['HTML5', 'circle-100'], ['CSS3', 'circle-90'], ['JavaScript & jQuey', 'circle-40']]
-                                                li.skills-row__item
-                                                    .skill
-                                                        <svg class="skill__circle" viewBox="0 0 110 110">
-                                                            <circle r="45" cx="50%" cy="50%" fill="none" class="skill__first" />
-                                                            <circle r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class='skill__second #{skill[1]}'/>
-                                                        </svg>    
-                                                        span.skill__title #{skill[0]}       
-                                        if item =='Backend'
-                                            each skill in [['Python & Django', 'circle-80'], ['mySQL', 'circle-70'], ['Node.js', 'circle-30'],['Mongo.db', 'circle-30']]
-                                                li.skills-row__item
-                                                    .skill
-                                                        <svg class="skill__circle" viewBox="0 0 110 110">
-                                                            <circle r="45" cx="50%" cy="50%" fill="none" class="skill__first" />
-                                                            <circle r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class='skill__second #{skill[1]}'/>
-                                                        </svg>    
-                                                        span.skill__title #{skill[0]}       
-                                        if item =='Workflow'
-                                            each skill in [['Git', 'circle-80'], ['Gulp', 'circle-80'], ['Webpack', 'circle-45']]
-                                                li.skills-row__item
-                                                    .skill
-                                                        <svg class="skill__circle" viewBox="0 0 110 110">
-                                                            <circle r="45" cx="50%" cy="50%" fill="none" class="skill__first" />
-                                                            <circle r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class='skill__second #{skill[1]}'/>
-                                                        </svg>    
-                                                        span.skill__title #{skill[0]}                              
-                                                        //<text  class="skill__title" width='100px' dominant-baseline= 'middle' text-anchor = 'middle'; x="50%" y="50%">#{skill}</text>  
+block about
+    .about__left
+        .triangle.triangle--white.about__triangle
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 450 85" preserveaspectratio="none" class="triangle-svg">
+                <polygon class = "triangle__left" points="0,0  0,85   450.8,85  450.8,76"></polygon>
+            </svg>
+        .about__left-title
+            .about__left-svg: +svgIcon('about__bg-header','about_header')
+            .block-title.about__title Обо мне
+        .about__left-content
+            .about__user-photo: img.about__my-img(src="img/about/my-foto.jpg", alt="Я")
+            .about__user-title
+                .block-subtitle Кто я
+            .about__user-desc
+                p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+    .about__right
+        .triangle.triangle--beige.about__triangle
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 450 85" preserveaspectratio="none" class="triangle-svg">
+                <polygon class = "triangle__right" points="450,0   450,85   0,85   0,76"></polygon>
+            </svg>
+        .about__right-title
+            .block-subtitle Чем я могу быть вам полезен
+        .about__skills
+            .about__skills-desc Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+            .about__skills-block
+                ul.skills-list
+                    each item in ['Frontend', 'Backend', 'Workflow']
+                        li.skills-list__item
+                            .skills-row
+                                .skills-row__title #{item}
+                                ul.skills-row__list
+                                    if item =='Frontend'
+                                        each skill in [['HTML5', 'circle-100'], ['CSS3', 'circle-90'], ['JavaScript & jQuey', 'circle-40']]
+                                            li.skills-row__item
+                                                .skill
+                                                    <svg class="skill__circle" viewBox="0 0 110 110">
+                                                        <circle r="45" cx="50%" cy="50%" fill="none" class="skill__first" />
+                                                        <circle r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class='skill__second #{skill[1]}'/>
+                                                    </svg>    
+                                                    span.skill__title #{skill[0]}       
+                                    if item =='Backend'
+                                        each skill in [['Python & Django', 'circle-80'], ['mySQL', 'circle-70'], ['Node.js', 'circle-30'],['Mongo.db', 'circle-30']]
+                                            li.skills-row__item
+                                                .skill
+                                                    <svg class="skill__circle" viewBox="0 0 110 110">
+                                                        <circle r="45" cx="50%" cy="50%" fill="none" class="skill__first" />
+                                                        <circle r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class='skill__second #{skill[1]}'/>
+                                                    </svg>    
+                                                    span.skill__title #{skill[0]}       
+                                    if item =='Workflow'
+                                        each skill in [['Git', 'circle-80'], ['Gulp', 'circle-80'], ['Webpack', 'circle-45']]
+                                            li.skills-row__item
+                                                .skill
+                                                    <svg class="skill__circle" viewBox="0 0 110 110">
+                                                        <circle r="45" cx="50%" cy="50%" fill="none" class="skill__first" />
+                                                        <circle r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class='skill__second #{skill[1]}'/>
+                                                    </svg>    
+                                                    span.skill__title #{skill[0]}                              
+                                                    //<text  class="skill__title" width='100px' dominant-baseline= 'middle' text-anchor = 'middle'; x="50%" y="50%">#{skill}</text>  
+block map 
     section.section.map
         div#map
-        .contacts.section__contacts
+        .contacts.map__contacts
             .block-subtitle.contacts__title Контакты
-            each item in [['skype', 'skype_kdn'],['skype', 'astahov@gmail.com'],['phone','+7 931 200 93 24'],['map_marker','Новосибирск, ул. Инская, д.14']]
-                .contacts__block
-                    +svgIcon(`contacts__${item[0]}`,item[0])
-                    .contacts__info #{item[0]}
+            .contacts__list
+                each item in [['skype', 'skype_kdn'],['envelope2', 'astahov@gmail.com'],['phone','+7 931 200 93 24'],['map_marker','Новосибирск, ул. Инская, д.14']]
+                    .contacts__block
+                        +svgIcon(`contacts__${item[0]}`,item[0])
+                        .contacts__info #{item[1]}
     
-                                          
-                                                    
+

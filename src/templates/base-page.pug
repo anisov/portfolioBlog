@@ -1,0 +1,40 @@
+extends base
+include config/_mixins
+block content
+    section.section.promo
+        header.header
+            .header__left
+                include includes/_social.pug
+            .navigation__short-menu
+                .short-menu
+        block promo__block        
+            .promo__block
+                .promo__img: img.promo__my-img(src="img/welcome/people-one.jpg", alt="Я")
+                .promo__name Владимир Астахов
+                .promo__desc Личный сайт веб разработчика
+        block down 
+
+    section.section.about
+        block about
+
+    block map
+
+    footer.footer
+        .footer__one
+            .footer__col 
+                .footer__desc   Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+            .footer__col
+                .footer__links 
+                    .footer__menu
+                        ul.footer__list-menu
+                            -var footer_menu = ['Мои работы', 'Обо мне', 'Блог', 'Авторизация']
+                            each item in footer_menu
+                                li.footer__menu-elem 
+                                    a.footer__menu-link #{item}
+                    .footer__social
+                        include includes/_social.pug            
+            .footer__col  
+                .footer__quote Всегда пишите код так, будто 
+                    |сопровождать его будет склонный к насилию психопат, который знает, где вы живете 
+                    p.footer__auther — Martin Golding   
+        .footer__two © Владимир Астахов | Создано с любовью в LoftSchool | 2016    

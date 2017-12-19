@@ -1,0 +1,93 @@
+.skill{
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+}
+.skill__circle {
+  fill: none;
+  stroke-width: 15;
+}
+.skill__first {
+  stroke: #dfdcd5;
+}
+.skill__second {
+  stroke: #1bb696;
+  stroke-dasharray: .0010 282.6;
+  transition: all 1s;
+}
+
+.skill__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #4e8839;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+}
+.skill__circle:hover .circle-0 {
+    stroke-dasharray: .001 282.6;
+}
+.skill__circle:hover .circle-5 {
+  stroke-dasharray: 14.13 282.6;
+}
+.skill__circle:hover .circle-10 {
+    stroke-dasharray: 28.26 282.6;
+}
+.skill__circle:hover .circle-15 {
+    stroke-dasharray: 42.39 282.6;
+}
+.skill__circle:hover .circle-20 {
+    stroke-dasharray: 56.52 282.6;
+}
+.skill__circle:hover .circle-25 {
+    stroke-dasharray: 70.65 282.6;
+}
+.skill__circle:hover .circle-30 {
+    stroke-dasharray: 84.78 282.6;
+}
+.skill__circle:hover .circle-35 {
+    stroke-dasharray: 98.91 282.6;
+}
+.skill__circle:hover .circle-40 {
+    stroke-dasharray: 113.04 282.6;
+}
+.skill__circle:hover .circle-45 {
+    stroke-dasharray: 127.17 282.6;
+}
+.skill__circle:hover .circle-50 {
+    stroke-dasharray: 141.3 282.6;
+}
+.skill__circle:hover .circle-55 {
+    stroke-dasharray: 155.43 282.6;
+}
+.skill__circle:hover .circle-60 {
+    stroke-dasharray: 169.56 282.6;
+}
+.skill__circle:hover .circle-65 {
+    stroke-dasharray: 183.69 282.6;
+}
+.skill__circle:hover .circle-70 {
+    stroke-dasharray: 197.82 282.6;
+}
+.circles:hover .circle-75 {
+    stroke-dasharray: 211.95 282.6;
+}
+.skill__circle:hover .circle-80 {
+    stroke-dasharray: 226.08 282.6;
+}
+.skill__circle:hover .circle-85 {
+    stroke-dasharray: 240.21 282.6;
+}
+.skill__circle:hover .circle-90 {
+    stroke-dasharray: 254.34 282.6;
+}
+.skill__circle:hover .circle-95 {
+    stroke-dasharray: 268.47 282.6;
+}
+.skill__circle:hover .circle-100 {
+    stroke-dasharray: 282.6 282.6;
+}
