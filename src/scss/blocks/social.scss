@@ -1,0 +1,37 @@
+.social__list{
+    display: flex;
+}
+.social__icon{
+    width: 31px;
+    height: 17px;
+    margin: 0 27px 43px 0;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+.social__svg{
+    fill: #ffffff;
+    transition: .4s;   
+    opacity: 0.5;
+
+    &--vk{
+        width: 31px;
+        height: 17px;
+    }
+    &--github{
+        width: 26px;
+        height: 22px;
+    }
+    &--in{
+        width: 24px;
+        height: 22px;
+    }
+    &:hover{
+        fill:#4e8839;
+        opacity: 1;
+    }
+}
+.social__svg--github{
+    width: 26px;
+    height: 22px;
+}

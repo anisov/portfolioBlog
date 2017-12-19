@@ -1,3 +1,90 @@
+//index
+.entry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    min-height: 395px;
+    background-color: rgba(#122620, 0.6) ;
+    border-radius: 8px;
+}
+.entry__img{
+    margin-top: 40px;
+    width: 141px;
+    height: 141px;
+    border-radius: 100%;
+    background: url('../img/welcome/people-one.jpg') center center no-repeat ;
+}
+.entry__name{
+    text-align: center;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+    margin-top: 13px;
+}
+.entry__desc{
+    margin-top: 4px;
+    opacity: 0.8;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.welcome__socials{
+    margin: 34px 0 0 6px;
+}
+.entry__tab-list{
+    display: flex;
+    flex-direction: row;
+}
+.entry__tab-elem{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center; //почему не работает
+    flex: 1;
+    height: 45px;
+    background-color: #6c9c5a;
+    border-right: solid 2px;
+    border-color:rgba(222, 227, 231, 0.5);
+    transition: background-color .4s;
+    &:first-child{
+        flex:6;
+        border-radius: 0 0 0 8px;
+    }
+    &:nth-child(2){
+        flex:5;
+    }
+    &:last-child{
+        border-right: solid 0;
+        flex:4;
+        border-radius: 0 0 8px 0;
+    }
+    &:hover{
+        background-color: #4e8839;
+    }
+}
+.entry__tabs{
+    width: 100%;
+}
+.entry__tab-link{
+    text-decoration: none; 
+    width: 100%;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 45px;
+    &:first-child{
+
+    }
+}
+
+//auth
 .entry__auth-title{
     text-align: center;
     color: #ffffff;

@@ -16,35 +16,37 @@
     <div class="wrapper">
       <section class="welcome">
         <div class="entry">
-          <div class="entry__auth-title">Авторизуйтесь</div>
-          <div class="entry__elem">
-            <div class="entry__decorate">
-              <svg class="entry__svg-auth entry__svg-auth--login">
-                <use xlink:href="img/sprite/sprite.svg#login"></use>
-              </svg>
+          <form class="aaa">
+            <div class="entry__auth-title">Авторизуйтесь</div>
+            <div class="entry__elem">
+              <div class="entry__decorate">
+                <svg class="entry__svg-auth entry__svg-auth--login">
+                  <use xlink:href="img/sprite/sprite.svg#login"></use>
+                </svg>
+              </div>
+              <input class="entry__login" placeholder="Логин">
             </div>
-            <input class="entry__login" placeholder="Логин">
-          </div>
-          <div class="entry__elem">
-            <div class="entry__decorate">
-              <svg class="entry__svg-auth entry__svg-auth--password">
-                <use xlink:href="img/sprite/sprite.svg#password"></use>
-              </svg>
+            <div class="entry__elem">
+              <div class="entry__decorate">
+                <svg class="entry__svg-auth entry__svg-auth--password">
+                  <use xlink:href="img/sprite/sprite.svg#password"></use>
+                </svg>
+              </div>
+              <input class="entry__password" type="password" placeholder="Пароль">
             </div>
-            <input class="entry__password" type="password" placeholder="Пароль">
-          </div>
-          <label class="entry__checkbox">
-            <input class="entry__input-checkbox" type="checkbox" name="bool" value="True"><span class="entry__checkbox-styled"></span><span class="entry__checkbox-title">Я человек</span>
-          </label>
-          <div class="entry__robot">Вы точно не робот?</div>
-          <div class="entry__answer">
-            <label class="entry__radio">
-              <input class="entry__input-radio" type="radio" name="bool" value="True"><span class="entry__radio-styled"></span><span class="entry__radio-title">Да </span>
+            <label class="entry__checkbox">
+              <input class="entry__input-checkbox" type="checkbox" name="bool" value="True"><span class="entry__checkbox-styled"></span><span class="entry__checkbox-title">Я человек</span>
             </label>
-            <label class="entry__radio">
-              <input class="entry__input-radio" type="radio" name="bool" value="False"><span class="entry__radio-styled"></span><span class="entry__radio-title">Не уверен  </span>
-            </label>
-          </div>
+            <div class="entry__robot">Вы точно не робот?</div>
+            <div class="entry__answer">
+              <label class="entry__radio">
+                <input class="entry__input-radio" type="radio" name="bool" value="True"><span class="entry__radio-styled"></span><span class="entry__radio-title">Да </span>
+              </label>
+              <label class="entry__radio">
+                <input class="entry__input-radio" type="radio" name="bool" value="False"><span class="entry__radio-styled"></span><span class="entry__radio-title">Не уверен  </span>
+              </label>
+            </div>
+          </form>
           <div class="entry__tabs">
             <ul class="entry__tab-list">
               <li class="entry__auth-botton"><a class="entry__tab-link" href="/intro">На главную</a></li>

@@ -14,7 +14,7 @@
 .section {
   width: 100%;
   height: 100vh;
-  min-height: 650px;
+  min-height: 850px;
 }
 .section-title{
   
@@ -27,6 +27,7 @@
   line-height: 66px;
   text-transform: uppercase;
   letter-spacing: 1.57px;
+  @include line(#566358)
 }
 
 .block-subtitle{

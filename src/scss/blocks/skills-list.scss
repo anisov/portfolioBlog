@@ -1,0 +1,19 @@
+.skills-list__item{
+    display: flex;
+    flex-direction: column;
+}
+.skills-row__title{
+    color: #566358;
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 32px;
+}
+.skills-row__list{
+    margin-top: 16px;
+    margin-bottom: 26px;
+    display: flex;
+}
+.skills-row__item{
+    margin-right: 40px;
+}

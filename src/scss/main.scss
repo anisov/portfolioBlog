@@ -1,5 +1,4 @@
 @import 'normalize';
-@import "font-awesome.min.css";
 
 //media
 @import "layout/_media";
@@ -14,6 +13,7 @@
 @import "layout/_adjustment";
 
 //section
-@import "section/*";
+@import "sections/*";
 
-
+//blocks
+@import "blocks/*";
