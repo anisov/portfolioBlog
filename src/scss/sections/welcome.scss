@@ -1,6 +1,7 @@
 .welcome{
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    min-height: 850px;
     display: flex;
     position:  relative;
     background: url('../img/welcome/welcome-bg.png') center center no-repeat;

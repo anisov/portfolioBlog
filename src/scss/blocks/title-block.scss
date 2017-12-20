@@ -1,0 +1,25 @@
+.title-block{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 499px;
+    height: 175px;
+}
+.title-block__svg{
+    position: absolute;
+    top: -14%;    
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: #93c42e;
+    opacity: 0.1;
+}
+.title-block__title{
+    text-align: center;
+    width: 356px;
+}
+.title-block--size{
+    width: 506px;
+    height: 165px;
+}

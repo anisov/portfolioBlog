@@ -1,6 +1,7 @@
 .wrapper{
   width: 100%;
-  height: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 .maincontent {
@@ -15,6 +16,7 @@
   width: 100%;
   height: 100vh;
   min-height: 850px;
+
 }
 .section-title{
   color: #ffffff;
@@ -26,7 +28,7 @@
   letter-spacing: 1.57px;
   @include line(#ffffff);
 }
-.block-title{
+.main-title{
   color: #373e42;
   font-family: "Sansus";
   font-size: 63px;
@@ -37,13 +39,14 @@
   @include line(#566358);
 }
 
-.block-subtitle{
+.sub-title{
   color: #566358;
   font-family: "Sansus";
   font-size: 35px;
   font-weight: 400;
   line-height: 41px;
   text-transform: uppercase;
+  @include line(#566358);
 }
 .section-title--mobile{
 

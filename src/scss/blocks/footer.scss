@@ -4,7 +4,7 @@
     opacity: 0.85;
 }
 .footer__one{
-    height: 147px;
+    min-height: 147px;
     display:flex;
 }
 .footer__col{
@@ -31,7 +31,7 @@
     }
 }
 .footer__desc{
-    width: 355px;
+    max-width: 355px;
     color: #ffffff;
     font-family: Roboto;
     font-size: 16px;
@@ -44,6 +44,7 @@
 }
 .footer__list-menu{
     display: flex;
+    flex-wrap: wrap;
 }
 .footer__social{
     margin-top: 27px;
@@ -58,7 +59,7 @@
     line-height: 23.69px;
 }
 .footer__quote{
-    width: 480px;
+    max-width: 480px;
     opacity: 0.5;
     color: #ffffff;
     font-family: "Roboto - Light Italic";
