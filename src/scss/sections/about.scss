@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  position: relative;
 }
 .about__left{
   width: 50%;
@@ -12,7 +13,7 @@
 }
 .about__triangle{
   position: absolute;
-  bottom: 98.9%;
+  bottom: 100%;
 }
 .about__left-title{
   display: flex;
