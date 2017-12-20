@@ -1,0 +1,64 @@
+.reviews{
+    background: url('/img/work/work-bg-full.jpg') center center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+.reviews__title{
+    margin-top: 68px;
+}
+.reviews__comment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 66px;
+}
+.reviews__comment-col{
+    width: 380px;    
+    display: flex;
+    flex-direction: column;
+    margin-right: 24px;
+    margin-left: -4px;
+    &:after{
+        margin-right: 0;
+    }
+}
+.reviews__block-img{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 9px;
+}
+.reviews__img{
+    width: 77px;
+    height: 77px;
+}
+.reviews__block-text{
+    width: 100%;
+    color: #5d5a55;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 26px;
+}
+.reviews__author{
+    margin-top: 18px;    
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 24px;
+    color: #4e8839;
+    font-weight: 700;
+}
+.reviews__author-info{
+    color: #373e42;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.reviews__form{
+    margin-bottom: 156px;
+}

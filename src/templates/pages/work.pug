@@ -1,0 +1,75 @@
+extends ../base-page.pug
+block down
+    .promo__down 
+        +svgIcon('svg-down','arrow_down')
+block main-content
+    section.section.work
+        .triangle.work__triangle
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 890 85" preserveaspectratio="none" class="traingle">
+                <polygon class = "triangle__work" points="0,0   0,85   445.100,85   445.100,75.1"></polygon>
+                <polygon class = "triangle__work" points="890,0   890,85   445,85   445,74.9999"></polygon>
+            </svg>
+        .work__info 
+            .title-block.title-block--size.work__title
+                +svgIcon('title-block__svg','works_header')
+                .title-block__title.main-title Мои работы        
+        .slider
+            .slider__info
+                .slider__title
+                    .sub-title Сайт школы онлайн Образования
+                .slider__technologies HTML , CSS, JAVASCRIPT
+                .slider__elem
+                    .slider__decorate
+                        +svgIcon('slider__svg-link', 'link')
+                    a.slider__button(href='/') Посмотреть сайт
+            .slider__display
+                .slider__work.slider__work--active
+                    img.slider__site(src="/img/work/work-5.png", alt="Моя работа")
+                .slider__work
+                    img.slider__site(src="/img/work/work-1.png", alt="Моя работа")                    
+                .slider__work
+                    img.slider__site(src="/img/work/work-2.png", alt="Моя работа")  
+                .slider__work
+                    img.slider__site(src="/img/work/work-3.png", alt="Моя работа")  
+                .slider__work
+                    img.slider__site(src="/img/work/work-4.png", alt="Моя работа")  
+            .slider__btns
+                div.slider__btn-prev 
+                    .slider__btn-work.slider__btn-work--active
+                        img.slider__site.slider__site--cover(src="/img/work/work-1.png", alt="Моя работа")      
+                    .slider__bg-prev  
+                        +svgIcon('slider__svg-down', 'portf_arrow_down')
+                div.slider__btn-next
+                    .slider__btn-work.slider__btn-work--active
+                        img.slider__site.slider__site--cover(src="/img/work/work-4.png", alt="Моя работа")          
+                    .slider__bg-next 
+                        +svgIcon('slider__svg-up', 'portf_arrow_up') 
+
+    section.section.reviews
+        .title-block.reviews__title
+            +svgIcon('title-block__svg','about_header')
+            .title-block__title.main-title Что обо мне говорят
+        .reviews__comment
+            .reviews__comment-col
+                .reviews__block-img
+                    img.reviews__img(src="img/work/comment.jpg", alt="")
+                .reviews__block-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .reviews__author Ковальчук Дмитрий
+                    p.reviews__author-info — основатель Loftschool
+            .reviews__comment-col
+                .reviews__block-img
+                    img.reviews__img(src="img/work/comment1.jpg", alt="")
+                .reviews__block-text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                .reviews__author Сабанцев Владимир
+                    p.reviews__author-info — преподаватель
+        .form-contact.reviews__form
+            form.form-contact__send(method="post")
+                .form-contact__title
+                    .sub-title Связаться со мной
+                input(type="text", name='name', placeholder ='Имя').form-contact__name
+                input(type="email", name="password" placeholder ='Пароль').form-contact__email
+                input(type="textarea", name="comment" placeholder ='Ваше сообщение').form-contact__mes
+                .form-contact__btns
+                    button.send-button(type="submit") Отправить
+                    button(type="reset").send-reset Очистить
+        include ../includes/footer            

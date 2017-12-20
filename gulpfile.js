@@ -84,7 +84,7 @@ const paths = {
         distFile: 'src/scss/layout'
     },
     favicons:{
-        src: 'src/img/favicons/easymoblog.png',
+        src: 'src/img/favicons/favicon.png',
         dest: 'build/img/favicons'
     }
 };
@@ -216,8 +216,7 @@ function pngSprite() {
   };
 
 // Генератор фавиконок
-
-gulp.task('generate-favicon', function(done) {
+gulp.task('favicon', function(done) {
 	realFavicon.generateFavicon({
         masterPicture: paths.favicons.src,
         dest: paths.favicons.dest,
