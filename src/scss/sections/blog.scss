@@ -1,0 +1,108 @@
+.blog{
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: #faf8f0;
+}
+.blog__left{
+    width: 490px/1800px*100%;
+    max-width: 490px;
+}
+.blog__triangle{
+    position: absolute;
+    bottom: 100%;
+}
+.blog__list{
+    margin-top: 49px;
+    margin-left: 125px/490px*100%;
+    margin-right: 100px/490px*100%;
+    width: 283px;
+    text-align: right;
+}
+.blog__elem{
+    margin-bottom: 21px;
+    margin-left: 19px;
+}
+.blog__elem-link{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    color: #455a64;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    &--current{
+        color: #4e8839;
+        font-weight: 700;
+        &:after{
+            background-color: #6c9c5a;
+          }
+    }
+    &:after{
+        margin-left: 15px;
+        align-self: center;
+        content: '';
+        display: block;      
+        width: 3px;
+        height: 42px;
+      }
+}
+.blog__right{
+    margin-left: 19px;
+    width:  1310px/1800px*100%;
+    max-width: 1310px;
+}
+.blog__article{
+    display: flex;
+    flex-direction: column;
+    &:after{
+        display: block;
+        content: '';
+        margin-top:70px;
+        margin-bottom: 21px;
+        width: 681px;
+        height: 5px;
+        background-color: #373e42;
+        opacity: 0.07;
+    }
+    &:last-child{
+        margin-bottom: 66px;
+        &:after{
+            display: none;
+        }
+    }
+}
+.blog__title{
+    text-transform: inherit;
+    margin-top: 41px;
+    margin-bottom: 8px;
+}
+.blog__date{
+    opacity: 0.7;
+    color: #4e8839;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 41px;
+    margin-bottom: 9px;
+}
+.blog__text{
+    width: 884px;
+    color: #455a64;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    & p{
+        margin-bottom: 10px;
+    }
+}
+.blog__code{
+    background-color: #f5f2f0;
+    margin-top: 2px;
+    width: 980px;
+    height: 128px;
+}
