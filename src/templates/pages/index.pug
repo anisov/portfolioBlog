@@ -3,7 +3,7 @@ block variables
   - var title = 'Главная страница'
 
 block welcome__auth
-    a.welcome__auth(href="/auth.html") Авторизоваться
+    a.welcome__auth(href="./auth.html") Авторизоваться
 
 block entry
     .entry__img
@@ -13,7 +13,7 @@ block entry
         include ../includes/_social.pug
 
 block entry__tabs
-    each tab in [['Мои работы', '/work.html'],['Обо мне', '/about.html'],['Блог', '/blog.html']]
+    each tab in [['Мои работы', './work.html'],['Обо мне', './about.html'],['Блог', './blog.html']]
         li.entry__tab-elem
             a.entry__tab-link(href=`${tab[1]}`) #{tab[0]}        
                                     
