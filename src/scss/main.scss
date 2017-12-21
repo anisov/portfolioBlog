@@ -8,9 +8,7 @@
 @import "config/_mixins";
 
 // base
-@import "layout/_fonts";
-@import "layout/_base";
-@import "layout/_adjustment";
+@import "layout/*";
 
 //section
 @import "sections/*";

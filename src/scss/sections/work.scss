@@ -141,10 +141,17 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(147, 153, 141, 0.7);
+    transition: background-color .4s;
+    &:hover{
+        background-color:darken(rgba(176, 183, 170, 0.7), 20)
+    }
 }
 .slider__bg-prev{
     @extend .slider__bg-next;
     background-color: rgba(176, 183, 170, 0.7);
+    &:hover{
+        background-color:darken(rgba(176, 183, 170, 0.7), 20)
+    }
 }
 .slider__btn-work{
     display: none;

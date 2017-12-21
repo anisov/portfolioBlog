@@ -8,6 +8,10 @@
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <link rel="stylesheet" href="/css/main.min.css"><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="js/main.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
@@ -122,6 +126,8 @@
         </div>
         <div class="reviews__comment">
           <div class="reviews__comment-col">
+            <div class="reviews__quotes">
+               <i class="reviews__quotes-text fa fa-quote-left" aria-hidden="true"></i></div>
             <div class="reviews__block-img"><img class="reviews__img" src="img/work/comment.jpg" alt=""></div>
             <div class="reviews__block-text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
             <div class="reviews__author">Ковальчук Дмитрий
@@ -129,6 +135,8 @@
             </div>
           </div>
           <div class="reviews__comment-col">
+            <div class="reviews__quotes">
+               <i class="reviews__quotes-text fa fa-quote-left" aria-hidden="true"></i></div>
             <div class="reviews__block-img"><img class="reviews__img" src="img/work/comment1.jpg" alt=""></div>
             <div class="reviews__block-text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</div>
             <div class="reviews__author">Сабанцев Владимир
@@ -149,6 +157,11 @@
               <button class="send-reset" type="reset">Очистить</button>
             </div>
           </form>
+        </div>
+        <div class="reviews__up">
+          <svg class="reviews__up-svg reviews__up-svg--arrow_down">
+            <use xlink:href="img/sprite/sprite.svg#arrow_down"></use>
+          </svg>
         </div>
         <footer class="footer">
           <div class="footer__one">

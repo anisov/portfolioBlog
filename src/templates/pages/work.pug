@@ -51,12 +51,16 @@ block main-content
             .title-block__title.main-title Что обо мне говорят
         .reviews__comment
             .reviews__comment-col
+                .reviews__quotes 
+                    <i class="reviews__quotes-text fa fa-quote-left" aria-hidden="true"></i>
                 .reviews__block-img
                     img.reviews__img(src="img/work/comment.jpg", alt="")
                 .reviews__block-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 .reviews__author Ковальчук Дмитрий
                     p.reviews__author-info — основатель Loftschool
             .reviews__comment-col
+                .reviews__quotes 
+                    <i class="reviews__quotes-text fa fa-quote-left" aria-hidden="true"></i>
                 .reviews__block-img
                     img.reviews__img(src="img/work/comment1.jpg", alt="")
                 .reviews__block-text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
@@ -72,4 +76,6 @@ block main-content
                 .form-contact__btns
                     button.send-button(type="submit") Отправить
                     button(type="reset").send-reset Очистить
+        .reviews__up
+            +svgIcon('reviews__up-svg','arrow_down')       
         include ../includes/footer            

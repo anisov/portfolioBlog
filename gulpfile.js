@@ -70,7 +70,7 @@ const paths = {
         dest: 'build/js/'
     },
     fonts: {
-        src: 'src/fonts/**/*.{woff,woff2}',
+        src: 'src/fonts/**/*.{woff,woff2,eot,svg,ttf,otf}',
         dest: 'build/fonts/'
     },
     svgSprite:{
