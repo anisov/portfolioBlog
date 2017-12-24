@@ -10,7 +10,7 @@
     margin-left: 30px;
     margin-top: 32px;
 }
-    .navigation__short-menu{
+    .header__short-menu{
     margin-top: 28px;
     display: flex;
     height: 35px;
@@ -18,4 +18,7 @@
     align-items: center;
     margin-right: 30px;
     margin-left:auto;
+    @include iphones{
+        height: 23px;        
+    }
 }

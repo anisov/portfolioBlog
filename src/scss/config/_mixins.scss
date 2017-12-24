@@ -9,6 +9,10 @@
 @function rem($px) {
   @return $px / 16px+0rem;
 }
+@function rem-t($px) {
+  @return $px / 14px+0rem;
+}
+
 @mixin clearfix{
   &:after{
     content: '';
@@ -27,6 +31,14 @@
     background-color: $color;
     margin-top: 21px;
     margin-bottom: 25px;
+    @include tablets{
+      margin: 9px auto 13px;  
+    }
+    @include iphones{
+      margin: 11px auto 13px;
+      width: 56px;
+      height: 3px;
+    }
   }
 }
 @mixin iconSize($width, $height) {

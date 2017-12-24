@@ -1,22 +1,37 @@
 .contacts{
     width: 380px;
-    height: 312px;
+    min-height: 312px;
     background-color: #f4f5f0;
     opacity: 0.85;
     border-radius: 8px;
+    @include tablets{
+        width: 349px;
+        min-height: 287px;
+    }
+    @include iphones{
+        width: 100%;
+        min-height: 303px;
+    }
 }
 .contacts__title{
     margin-top: 28px;
     text-align: center;
-    @include line(#566358)
 }
 .contacts__list{
     margin-top: 31px;
+    @include tablets{
+        margin-top: 23px;
+    }
 }
 .contacts__block{
     display: flex;
     margin-left:40px;
     margin-bottom: 21px;
+    align-items: center;
+    @include tablets{
+        margin-left: 20px;        
+        margin-bottom: 19px;
+    }
 }
 .contacts__skype{
     @include iconSize(24px, 24px);
@@ -39,7 +54,7 @@
     opacity: 0.8;
     color: #566358;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 500;
     line-height: 24px;
 }
