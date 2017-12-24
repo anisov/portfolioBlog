@@ -6,13 +6,40 @@
 .footer__one{
     min-height: 147px;
     display:flex;
+    @include tablets{
+        flex-wrap: wrap;
+    }
+    @include iphones{
+        flex-direction: column;
+    }
 }
 .footer__col{
     display: flex;
     justify-content: flex-start;
-    margin-left: 30px;
+    padding-left: 30px;
     margin-top: 25px;
     width: 33.3333%;
+    @include tablets{
+        width: 50%;
+        padding-left: 24px;
+        &:nth-child(2){
+            &:after{
+                display: none;
+                @include iphones{
+                    display:block; 
+                }
+            }
+        }
+    }
+    @include iphones{
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        margin-top: 14px;
+        align-items: center;
+        padding: 0 10px;
+    }
     &:after{
         align-self: center;
         content: '';
@@ -22,11 +49,27 @@
         height: 87px;
         background-color: #fff;
         opacity: .2;
+        @include iphones{
+            margin-top: 12px;
+            margin-left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            opacity: 0.2;
+        }
       }
     &:last-child{
-        margin-right: 90px;
+        padding-right: 45px;
         &:after{
             display: none;
+        }
+        @include tablets{
+            margin-top: 0;
+            width: 100%;
+        }
+        @include iphones{
+            padding-right: 10px;
+            margin-top: 12px;
         }
     }
 }
@@ -34,39 +77,63 @@
     max-width: 355px;
     color: #ffffff;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 300;
     line-height: 24px;
+    @include iphones{
+        //width: 270px;
+    }
 }
 .footer__links {
     display: flex;
     flex-direction: column;
+    @include iphones{
+        align-items: center;
+    }
 }
 .footer__list-menu{
     display: flex;
     flex-wrap: wrap;
+    @include iphones{
+        justify-content: center;
+    }
 }
 .footer__social{
     margin-top: 27px;
+    @include iphones{
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
 }
 .footer__menu-link{
     margin-right: 38px;
     text-decoration: none;
     color: #ffffff;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 700;
     line-height: 23.69px;
+    @include laptops{
+        margin-right: 19px;
+    }
+    @include iphones{
+        margin-right: 11px;
+    }
 }
 .footer__quote{
     max-width: 480px;
     opacity: 0.5;
     color: #ffffff;
-    font-family: "Roboto - Light Italic";
-    font-size: 16px;
+    font-family: Roboto;
+    font-style: italic;
+    font-size: rem(16px);
     //font-weight: 400;
     line-height: 26.04px;
     font-weight: 300;
+    @include tablets{
+        max-width: 100%;
+        margin-bottom: 27px;
+    }
 }
 .footer__auther{
     font-family: Roboto;
@@ -80,5 +147,15 @@
     opacity: 0.85;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 300;
+    line-height: 24.14px;
+    @include iphones{
+        padding: 0 18px;
+        justify-content: center;
+    }
 }

@@ -8,6 +8,9 @@
 }
 .triangle__right{
     fill: #f4f5f0;
+    @include tablets{
+        fill: #ebefe2;
+    }
 }
 .blog__triangle{
     fill:#faf8f0;

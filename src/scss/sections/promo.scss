@@ -23,19 +23,30 @@
 }
 .promo__name{
     margin-top: 22px;
+    text-align: center;
     color: #ffffff;
     font-family: Roboto;
-    font-size: 35px;
+    font-size: rem(35px);
     font-weight: 500;
     line-height: 41px;
+    @include tablets{
+        font-size: rem-t(35px);
+    }
+    @include iphones{
+        font-size: rem-t(21px);
+        line-height: rem-t(28px);
+    }
 }
 .promo__desc{
     margin-top: 1px;
     color: #ffffff;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 400;
     line-height: 24px;
+    @include tablets{
+
+    }
 }
 .promo__down{
     position: absolute;

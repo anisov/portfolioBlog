@@ -3,6 +3,10 @@
   display: inline-block;
   width: 120px;
   height: 120px;
+  @include iphones{
+    width: 111px;
+    height: 111px;
+  }
 }
 .skill__circle {
   fill: none;
@@ -25,7 +29,7 @@
   text-align: center;
   color: #4e8839;
   font-family: Roboto;
-  font-size: 14px;
+  font-size: rem(14px);
   font-weight: 500;
 }
 .skill__circle:hover .circle-0 {

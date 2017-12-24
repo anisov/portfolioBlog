@@ -5,16 +5,41 @@
 .skills-row__title{
     color: #566358;
     font-family: Roboto;
-    font-size: 28px;
+    font-size: rem(28px);
     font-weight: 500;
     line-height: 32px;
+    @include tablets{
+        text-align: center;
+    }
+    @include tablets{
+        font-size: rem-t(21px);
+    }
 }
 .skills-row__list{
     margin-top: 16px;
     margin-bottom: 26px;
     display: flex;
     flex-wrap: wrap;
+    @include laptops{
+        justify-content: center;
+    }
+    @include tablets{
+        margin-top: 7px;
+        margin-bottom: 27px;
+    }
+    @include phones{
+        margin-bottom: 19px;
+    }
 }
 .skills-row__item{
     margin-right: 40px;
+    @include tablets{
+        margin-right: 14px;
+        margin-left: 13px;
+    }
+    @include phones{
+        &:nth-child(1n+3){
+            margin-top: 26px;
+        }
+    }
 }
