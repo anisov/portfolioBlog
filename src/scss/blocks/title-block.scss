@@ -5,6 +5,31 @@
     align-items: center;
     width: 499px;
     height: 175px;
+    @include tablets{
+        width: 398px;
+        height: 140px;   
+    }
+    @include mini-tablets{
+        width: 360px;
+    }
+    @include iphones{
+        width: 249px;
+        height: 88px;
+    }
+    &--size{
+        width: 506px;
+        height: 165px;
+        @include mini-tablets{
+            width: 360px;
+        }
+        @include tablets{
+            height: 133px;
+        }
+        @include iphones{
+            width: 253px;
+            height: 83px;
+        }
+    }
 }
 .title-block__svg{
     position: absolute;
@@ -17,9 +42,5 @@
 }
 .title-block__title{
     text-align: center;
-    width: 356px;
-}
-.title-block--size{
-    width: 506px;
-    height: 165px;
+    max-width: 356px;
 }
