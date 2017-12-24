@@ -37,7 +37,7 @@
         margin-right: 14px;
         margin-left: 13px;
     }
-    @include phones{
+    @include iphones{
         &:nth-child(1n+3){
             margin-top: 26px;
         }
