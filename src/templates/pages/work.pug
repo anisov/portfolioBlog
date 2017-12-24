@@ -69,10 +69,10 @@ block main-content
         .form-contact.reviews__form
             form.form-contact__send(method="post")
                 .form-contact__title
-                    .sub-title Связаться со мной
+                    .sub-title.sub-title--big Связаться со мной
                 input(type="text", name='name', placeholder ='Имя').form-contact__name
-                input(type="email", name="password" placeholder ='Пароль').form-contact__email
-                input(type="textarea", name="comment" placeholder ='Ваше сообщение').form-contact__mes
+                input(type="email", name="email" placeholder ='Email').form-contact__email
+                textarea( name="comment" placeholder ='Ваше сообщение').form-contact__mes
                 .form-contact__btns
                     button.send-button(type="submit") Отправить
                     button(type="reset").send-reset Очистить

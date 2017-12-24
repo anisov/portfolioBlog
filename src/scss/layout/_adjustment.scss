@@ -46,6 +46,7 @@
   letter-spacing: rem(1.57px);
   @include line(#566358);
   @include tablets{
+    letter-spacing: initial;
     font-size: rem-t(49px);
     line-height: rem-t(61px);
   }
@@ -71,12 +72,20 @@
     font-size: rem-t(21px);
     line-height: rem-t(28px);
   }
-  &--big{
+  &--contacts{
     @include tablets{
       font-size: rem-t(35px);
     }
     @include iphones{
       font-size: rem-t(35px);
+    }
+  }
+  &--form{
+    @include tablets{
+      font-size: rem-t(35px);
+    }
+    @include iphones{
+      font-size: rem-t(21px);
     }
   }
 }

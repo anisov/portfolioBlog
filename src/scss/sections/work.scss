@@ -1,5 +1,10 @@
 .work{
     position: relative;
+    min-height: 750px;
+    @include tablets{
+        height: initial;
+        min-height: auto;
+    }
 }
 .work__triangle{
     position: absolute;
@@ -18,6 +23,12 @@
     width: 506px;
     height: 165px;
     @extend .title-block;
+    @include tablets{
+        margin-top: 3px;
+    }
+    @include iphones{
+        margin-top: 9px;        
+    }
 }
 .works__bg-title{
     position: absolute;
@@ -34,6 +45,9 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    @include tablets{
+        flex-wrap: nowrap;
+    }
 }
 .slider__info{
     background-color: #ebefe2;
@@ -43,14 +57,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include tablets{
+        width: 100%;
+        height: 270px;
+    }
+    @include iphones{
+        height: 219px;
+    }
 }
 .slider__title{
     text-align: center;
     width: 320px;
+    @include tablets{
+        width: 90%;
+    }
+    @include iphones{
+        margin-top: 19px;
+        width: 90%;
+        max-width: 320px;
+    }
 }
-.slider__technologies{
-    margin-bottom: 54px;
-}
+
 .slider__elem{
     position: relative;
     margin-bottom:20px;
@@ -64,6 +91,10 @@
     height: 45px;
     background-color: #6c9c5a;
     border-radius: 26px 0 0 29px;
+    @include iphones{
+        width: 35px;
+        height: 40px;
+    }
 }
 
 .slider__svg-link{
@@ -87,6 +118,10 @@
     font-weight: 500;
     line-height: 36px;
     text-decoration: none;
+    @include iphones{
+        width: 185px;
+        height: 40px;
+    }
 }
 .slider__technologies{
     margin-bottom: 54px;
@@ -96,6 +131,13 @@
     font-size: rem(16px);
     font-weight: 500;
     text-transform: uppercase;
+    @include tablets{
+        margin-top: 3px;
+        margin-bottom: 36px;
+    }
+    @include iphones{
+        margin-bottom: 14px;
+    }
 }
 .slider__display{
     display: flex;
@@ -105,6 +147,14 @@
     height: 525px/750px*100%;
     //max-height: 525px;
     background-color: #e1e4d7;
+    @include tablets{
+        order: -10;
+        width: 100%;
+        height: 530px;
+    }
+    @include iphones{
+        height: 257px;
+    }
 }
 .slider__work{
     display: none;
@@ -130,6 +180,13 @@
     height: 225px/750px*100%;
     //max-height: 226px;
     background-color: rgba(176, 183, 170, 0.7);
+    @include tablets{
+        width: 100%;
+        height: 215px;
+    }
+    @include iphones{
+        height: 94px;
+    }
 }
 .slider__bg-next {
     position: absolute;

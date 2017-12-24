@@ -7,24 +7,57 @@
     height: auto;
 }
 .reviews__title{
-    margin-top: 68px;
+    margin-top: 61px;
+    @include iphones{
+        margin-top: 39px;
+    }
 }
 .reviews__comment{
+    margin-top: 17px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 66px;
+    padding: 0 20px;
+    @include tablets{
+       padding: 0 21px;
+    }
+    @include mini-tablets{
+        flex-wrap: wrap;
+     }
+     @include iphones{
+        padding: 0 10px;
+    }
 }
 .reviews__comment-col{
     position: relative;
-    width: 380px;    
+    max-width: 380px; 
     display: flex;
     flex-direction: column;
     margin-right: 24px;
     margin-left: -4px;
-    &:after{
-        margin-right: 0;
+    &:last-child{
+        margin-right: -4px;
     }
+    @include tablets{
+        max-width: 335px;
+        width: 98%;
+        margin-right: 21px;
+        &:last-child{
+            margin-left: 21px;
+            margin-right: -21px;
+        }
+    }
+    @include mini-tablets{
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 35px;
+        &:last-child{
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+     }
 }
 .reviews__quotes {
     position: absolute;
@@ -54,6 +87,13 @@
     font-style: italic;
     font-weight: 400;
     line-height: 26px;
+    @include tablets{
+        font-size: rem-t(16px);
+        line-height: 1.7;
+    }
+    @include iphones{
+        font-size: rem-t(14px);
+    }
 }
 .reviews__author{
     margin-top: 18px;    
@@ -64,25 +104,53 @@
     line-height: 24px;
     color: #4e8839;
     font-weight: 700;
+    @include tablets{
+        margin-top: 8px;
+        margin-left: 67px;
+        font-size: rem-t(16px);
+        line-height: 1.5;
+    }
+    @include iphones{
+        margin-left: 28px;
+        font-size: rem-t(14px);
+    }
 }
 .reviews__author-info{
     color: #373e42;
     font-size: rem(16px);
     line-height: 24px;
     font-weight: 400;
+    @include tablets{
+        font-size: rem-t(16px);
+        line-height: 1.5;
+    }
+    @include iphones{
+        font-size: rem-t(14px);
+    }
 }
 .reviews__form{
     margin-bottom: 70px;
+    @include tablets{
+        margin-bottom: 58px;
+    }
+    @include iphones{
+        margin-bottom: 38px;
+    }
 }
 .reviews__up{
     text-align: center;
     width: 100%;
     margin-bottom: 70px;
+    @include tablets{
+        margin-bottom: 57px;
+    }
+    @include iphones{
+        margin-bottom: 37px;
+    }
 }
 .reviews__up-svg{
     transform: rotate(-180deg);
-    fill:#c2c2c0;
+    fill:#cfcfca;
     width: 26px;
     height: 16px;
-    opacity: 0.7;
 }

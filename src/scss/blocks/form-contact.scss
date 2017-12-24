@@ -3,6 +3,15 @@
     width: 380px;
     min-height: 461px;
     background-color: rgba(255, 255, 255, 0.15);
+    @include tablets{
+        width: 349px;
+        min-height: 441px;
+    }
+    @include iphones{
+        width: 98%;
+        max-width: 299px;
+        min-height: 423px;
+    }
 }
 .form-contact__send{
     display: flex;
@@ -12,6 +21,14 @@
 }
 .form-contact__title{
     margin-top: 30px;
+    margin-bottom: 7px;
+    @include tablets{
+        margin-bottom: 11px;
+    }
+    @include iphones{
+        margin-top: 35px;
+        margin-bottom: 8px;
+    }
 }
 .form-contact__name{
     padding-left: 18px;
@@ -22,11 +39,20 @@
     opacity: 0.85;
     border-radius: 24px;
     margin-bottom: 20px;
+    @include tablets{
+        width: 309px;
+        height: 45px;
+    }
+    @include iphones{
+        width: 259px;
+        height: 40px;
+    }
 }
 .form-contact__email{
     @extend .form-contact__name
 }
 .form-contact__mes{
+    resize: none; 
     border: 0;
     width: 340px;
     height: 140px;
@@ -34,7 +60,15 @@
     opacity: 0.85;
     border-radius: 24px;
     margin-bottom: 20px;
-    padding-left: 18px;
+    padding: 15px 18px;
+    @include tablets{
+        width: 309px;
+        height: 140px;
+    }
+    @include iphones{
+        width: 259px;
+        height: 140px;
+    }
 }
 .form-contact__btns{
     display: flex;
