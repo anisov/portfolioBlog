@@ -27,6 +27,14 @@
   text-transform: uppercase;
   letter-spacing: rem(1.57px);
   @include line(#ffffff);
+  @include tablets{
+    font-size: rem-t(49px);
+    line-height: rem-t(61px);
+  }
+  @include iphones{
+    font-size: rem-t(35px);
+    line-height: rem-t(42px);
+  }
 }
 .main-title{
   color: #373e42;
