@@ -195,12 +195,15 @@
 }
 .about__skills{
   margin-left: 38px;
+  padding-bottom: 13px;
   @include tablets{
     margin-right: 38px;
+    padding-bottom: 20px;
   }
   @include iphones{
     margin-right: 10px;
     margin-left: 10px;
+    padding-bottom: 7px;
   }
 }
 .about__skills-desc{
