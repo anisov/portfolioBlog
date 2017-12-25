@@ -32,6 +32,7 @@
 .reviews__comment-col{
     position: relative;
     max-width: 380px; 
+    flex: 1 1 380px;
     display: flex;
     flex-direction: column;
     margin-right: 24px;
