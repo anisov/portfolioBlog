@@ -1,5 +1,6 @@
 //index
 .entry{
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,6 +9,25 @@
     min-height: 395px;
     background-color: rgba(#122620, 0.6) ;
     border-radius: 8px;
+    transition: transform 1.9s, opacity 1s cubic-bezier(1, 0.04, 0.04, 1);
+    opacity: 1;
+    z-index: 2;
+    @include tablets {
+        width: 348px;
+        height: 395px;
+    }
+    @include iphones {
+      max-width: 348px;
+       margin: 0 10px;
+       width: 100%;
+       min-width: 260px;
+    }
+    &--back-side{
+        z-index: 1;
+        opacity: 0;
+        transform: rotateY(180deg) ;
+        backface-visibility: hidden;
+    }
 }
 .entry__img{
     margin-top: 40px;

@@ -285,7 +285,7 @@ function watch() {
     gulp.watch(paths.fonts.src, fonts);
     gulp.watch(paths.spritePng.src, pngSprite);
     gulp.watch(paths.svgSprite.src, svgSprite);
-    //gulp.watch(paths.favicons.src, favicons);
+    //gulp.watch(paths.favicons.src, gulp.series(['favicon']));
 }
 
 //Локальный  сервер + livereload
@@ -318,7 +318,6 @@ exports.server = server;
 exports.watch = watch;
 exports.svg = svgSprite;
 exports.png = pngSprite;
-//exports.favicons = favicons;
 
 /*
 const useref = require('gulp-useref');

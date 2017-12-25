@@ -1,20 +1,48 @@
-extends ../base-welcome
-block variables
-  - var title = 'Главная страница'
+extends ../base
+include ../config/_mixins
+block content
+    section.welcome
+        a.welcome__auth.js-click-change(href="") Авторизоваться
+        .entry.js-change-side
+            .entry__img
+            .entry__name Владимир Астахов
+            .entry__desc Личный сайт веб разработчика
+            .welcome__socials
+                include ../includes/_social.pug
+            .entry__tabs
+                ul.entry__tab-list
+                    each tab in [['Мои работы', './work.html'],['Обо мне', './about.html'],['Блог', './blog.html']]
+                        li.entry__tab-elem
+                            a.entry__tab-link(href=`${tab[1]}`) #{tab[0]}        
+        .entry.entry--back-side.js-change-side
+            .entry__auth-title Авторизуйтесь
+            .entry__elem
+                .entry__decorate
+                    +svgIcon('entry__svg-auth', 'login')
+                input.entry__login(placeholder='Логин')
+            .entry__elem
+                .entry__decorate
+                    +svgIcon('entry__svg-auth', 'password')
+                input.entry__password(type = 'password' placeholder='Пароль')
+            label.entry__checkbox()
+                input(type="checkbox" name='bool' value='True').entry__input-checkbox
+                span.entry__checkbox-styled
+                span.entry__checkbox-title Я человек
+            .entry__robot Вы точно не робот?
+            .entry__answer
+                label.entry__radio()
+                    input(type="radio" name='bool' value='True').entry__input-radio
+                    span.entry__radio-styled
+                    span.entry__radio-title Да 
 
-block welcome__auth
-    a.welcome__auth(href="./auth.html") Авторизоваться
-
-block entry
-    .entry__img
-    .entry__name Владимир Астахов
-    .entry__desc Личный сайт веб разработчика
-    .welcome__socials
-        include ../includes/_social.pug
-
-block entry__tabs
-    each tab in [['Мои работы', './work.html'],['Обо мне', './about.html'],['Блог', './blog.html']]
-        li.entry__tab-elem
-            a.entry__tab-link(href=`${tab[1]}`) #{tab[0]}        
-                                    
-                
+                label.entry__radio()
+                    input(type="radio" name='bool' value='False').entry__input-radio
+                    span.entry__radio-styled
+                    span.entry__radio-title Не уверен  
+            .entry__tabs
+                ul.entry__tab-list
+                    li.entry__auth-botton
+                        a.entry__tab-link.js-click-change(href='./') На главную
+                    li.entry__auth-botton
+                        button(type="submit").entry__submit Войти                  
+        footer.welcome__footer © Владимир Астахов | создано с любовью в LoftSchool | 2016
