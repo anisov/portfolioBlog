@@ -115,12 +115,16 @@
     font-family: Roboto;
     font-size: rem(16px);
     font-weight: 700;
-    line-height: 23.69px;
+    line-height: 24px;
+    transition: color .4s;
     @include laptops{
         margin-right: 19px;
     }
     @include iphones{
         margin-right: 11px;
+    }
+    &:hover{
+        color: #6c9c5a;
     }
 }
 .footer__quote{
@@ -156,7 +160,7 @@
     font-family: Roboto;
     font-size: rem(16px);
     font-weight: 300;
-    line-height: 24.14px;
+    line-height: 24px;
     @include iphones{
         padding: 0 18px;
         justify-content: center;

@@ -6,7 +6,7 @@ footer.footer
             .footer__links 
                 .footer__menu
                     ul.footer__list-menu
-                        -var footer_menu = [['Мои работы', './work.html'],['Обо мне', './about.html'],['Блог', './blog.html'],['Авторизация', './auth.html']]
+                        -var footer_menu = [['Мои работы', './work.html'],['Обо мне', './about.html'],['Блог', './blog.html'],['Авторизация', '/']]
                         each item in footer_menu
                             li.footer__menu-elem 
                                 a.footer__menu-link(href=`${item[1]}`) #{item[0]} 

@@ -1,7 +1,8 @@
 extends base
 include config/_mixins
 block content
-    section.section.promo
+    section.section.promo.webgl
+        <canvas class="webgl-canvas"></canvas>
         header.header
             .header__left
                 include includes/social-promo.pug
@@ -13,7 +14,6 @@ block content
                 .promo__name Владимир Астахов
                 .promo__desc Личный сайт веб разработчика
         block down 
-
     
     block main-content
         
