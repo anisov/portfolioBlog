@@ -26,6 +26,10 @@ const config = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.(frag|vert)$/,
+                loader: 'webpack-glsl-loader'
             }
         ]
     }

@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 380px;
+    width: 379px;
     min-height: 395px;
     background-color: rgba(#122620, 0.6) ;
     border-radius: 8px;
@@ -217,7 +217,7 @@
     font-family: Roboto;
     font-size: rem(16px);
     font-weight: 700;
-    line-height: 23.97px;
+    line-height: 24px;
 }
 .entry__answer{
     margin-bottom: 38px;
@@ -286,7 +286,7 @@
     background-color: #6c9c5a;
     border-right: solid 2px;
     border-color:rgba(222, 227, 231, 0.5);
-    border-radius: 0px 0px 0px 8px;
+    border-radius: 0 0 0 8px;
     transition: background-color .4s;
     &:hover{
         background-color: #4e8839;
@@ -301,7 +301,7 @@
     width: 100%;
     height: 100%;
     background-color: #6c9c5a;
-    border: 0px;
+    border: 0;
     border-radius: 0 0 8px 0;
     border-color:rgba(222, 227, 231, 0.5);
     transition: background-color .4s;

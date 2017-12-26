@@ -24,8 +24,10 @@
     "autoprefixer": "^7.2.2",
     "babel-loader": "^8.0.0-beta.0",
     "browser-sync": "^2.18.13",
+    "curry": "^1.2.0",
     "del": "^3.0.0",
     "gifsicle": "^3.0.4",
+    "gsap": "^1.20.3",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cached": "^1.1.1",
@@ -56,10 +58,12 @@
     "imagemin-optipng": "^5.2.1",
     "imagemin-pngquant": "^5.0.1",
     "jpegtran-bin": "^3.2.0",
+    "lodash": "^4.17.4",
     "node-normalize-scss": "^3.0.0",
     "postcss-object-fit-images": "^1.1.2",
     "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-glsl-loader": "^1.0.1"
   },
   "dependencies": {
     "jquery": "^3.2.1",
