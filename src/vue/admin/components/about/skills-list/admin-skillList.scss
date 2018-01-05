@@ -1,0 +1,29 @@
+.add-skill-row {
+    margin-bottom: 10px;
+  }
+  
+.skills-item {
+    width: 50%;
+    padding-right: 90px;
+    margin-bottom: 10px;
+    @include tablets{
+      padding-right: 40px;
+      width: 100%;
+    }
+}
+  
+.skills-item__title  {
+  color: #566358;
+  font-family: Roboto;
+  font-size: rem(16px);
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 20px;
+  margin-top: 19px;
+}
+  
+.skills-item__error {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: red;
+}

@@ -67,7 +67,11 @@ const paths = {
     },
     scripts: {
         src: 'src/js/**/*.js',
-        dest: 'build/js/'
+        dest: './build/'
+    },
+    vue: {
+        src: 'src/vue/**/*',
+        dest: './build/'
     },
     fonts: {
         src: 'src/fonts/**/*.{woff,woff2,eot,svg,ttf,otf}',
@@ -285,7 +289,8 @@ function watch() {
     gulp.watch(paths.fonts.src, fonts);
     gulp.watch(paths.spritePng.src, pngSprite);
     gulp.watch(paths.svgSprite.src, svgSprite);
-    //gulp.watch(paths.favicons.src, gulp.series(['favicon']));
+    gulp.watch(paths.vue.src, scripts);
+    gulp.watch(paths.favicons.src, gulp.series(['favicon']));
 }
 
 //Локальный  сервер + livereload
@@ -298,7 +303,7 @@ function server() {
 
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles, pugHtml, html, images, scripts, fonts, pngSprite, svgSprite,),
+    gulp.parallel(styles, pugHtml, html, images, scripts, fonts, pngSprite, svgSprite, 'favicon'),
 ));
 
 gulp.task('default', gulp.series(

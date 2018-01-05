@@ -45,3 +45,8 @@
   width: $width;
   height: $height;
 }
+
+@function svg($url, $color) {
+  $base-color: str-slice(inspect($color), 2);
+  @return unquote('url("' + $url + "?fill=%23" + $base-color +'")');
+}

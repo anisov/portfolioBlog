@@ -1,0 +1,46 @@
+.header__admin {
+  padding: 0 24px;
+  display: flex;
+  background: $green;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+  @include tablets{
+    padding: 0 10px;
+  }
+  @include iphones{
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+  
+.header__title {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: rem(28px);
+  font-weight: 500;
+  line-height: 34px;
+  @include tablets{
+    font-size: rem(21px);
+  }
+  @include iphones{
+    text-align: center;
+    font-size: rem-t(21px);
+  }
+}
+  
+.header__return {
+  opacity: 0.7;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: rem(16px);
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+  @include iphones{
+    order: -1;
+  }
+}
