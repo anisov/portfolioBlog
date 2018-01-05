@@ -1,0 +1,54 @@
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  position: relative;
+
+  &:hover {
+    .skill__remove {
+      display: block;
+    }
+  }
+}
+.skill__input-wrap {
+  display: flex;
+  align-items: center;
+}
+  
+.skill__name {
+  margin-right: 29px;
+  color: #566358;
+  font-size: rem(16px);
+  font-weight: 400;
+  line-height: 32px;
+}
+  
+.skill__input {
+  width: 46px;
+  height: 32px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 8px;
+  border:0px;
+}
+.skill__measure{
+  margin-left: 10px;
+}
+.skill__remove {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  display: none;
+}
+.skill__remove-btn{
+  font-size: 10px;
+  width: 20px;
+  height: 15px;
+  border: 0px;
+  border-radius: 8px;
+  background-color: #cc2525;
+  color: white;
+}

@@ -1,0 +1,78 @@
+.works{
+  padding: 50px 30px;
+  @include iphones{
+    padding: 30px 10px;
+  }
+}
+.works__title{
+  color: #566358;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 42px;
+  @include iphones{
+    margin-bottom: 18px;
+  }
+}
+.works__container{
+  display: flex;
+  flex-direction: column;
+}
+.works__form-title{
+  color: #566358;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 10px;
+}
+.works__row{
+  margin-bottom: 20px;
+}
+.works__input{
+  margin:0;
+  padding: 18px;
+  height: 45px;
+  max-width: 300px;
+  width: 100%;
+  color: #373e42;
+  font-size: rem(16px);
+  font-weight: 400;
+}
+.works__upload {
+  display: inline-flex;
+  align-items: center;  
+  cursor: pointer;
+}
+
+.works__upload-text {
+  color: $green;
+  font-family: Roboto;
+  font-size: rem(16px);
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.works__type-file {
+  display: none;
+}
+
+.works__icon {
+  background: svg('~img/admin/img-add.svg', $green) center center no-repeat;
+  width: 35px;
+  height: 34px;
+  margin-right: 10px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.form-title {
+  margin-bottom: 20px;
+}
+
+.works__error-message{
+  color: red;
+  margin-bottom: 20px;
+}

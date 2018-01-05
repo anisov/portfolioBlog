@@ -1,0 +1,14 @@
+.input-field {
+    margin: 20px 0 20px;
+    width: 60%;
+    border-radius: 5px;
+    background: #fff;
+    padding: 7px;
+    border: 0 none;
+    @include tablets{
+        width: initial;
+    }
+}
+.error {
+      border: 1px solid red;
+}

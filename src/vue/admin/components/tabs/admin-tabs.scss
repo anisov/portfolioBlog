@@ -1,0 +1,58 @@
+
+.tabs__list {
+  display: flex;
+  background: $beige;
+  width: 100%;
+  @include iphones{
+    flex-direction: column;
+  }
+}
+  
+.tabs__item {
+  min-width: 180px;
+  border-right: 2px solid #fff;
+  cursor: pointer;
+  &:last-child{
+    border-right: initial;
+  }
+  @include tablets{
+    flex:1;
+    min-width: initial;
+  }
+  @include iphones{
+    border-right: initial;
+    flex-direction: column;
+    border-bottom: 2px solid #fff;
+    &:last-child{
+      border-bottom: initial;
+    }
+  }
+  &--active{
+    .tabs__link {
+      background: #fff;
+      color: $green;
+    }
+  }
+}
+  
+.tabs__link {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #566358;
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.6s, background 0.6s;
+    @include iphones{
+      min-height: 45px;
+    }
+    &:hover{
+      color:$green;
+      background: #fff;
+    }
+  }

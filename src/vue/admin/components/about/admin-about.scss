@@ -1,0 +1,30 @@
+.about{
+  padding: 43px 45px;
+  width: 100%;
+  min-height: 100%;
+  @include tablets{
+    padding: 43px 30px;
+  }
+  @include iphones{
+    padding: 43px 10px;
+  }
+}
+.about__title {
+  color: #566358;
+  font-family: Roboto;
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 13px
+}
+  
+.about__skills-list {
+  width: 50%;
+  min-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  @include tablets{
+    width: 100%;
+    min-width: inherit;
+    flex-direction: column;
+  }
+}

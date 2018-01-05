@@ -1,0 +1,67 @@
+.blog{
+  padding: 50px 30px;
+  @include iphones{
+    padding: 30px 10px;
+  }
+}
+.blog__title {
+  color: #566358;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 42px;
+  @include iphones{
+    margin-bottom: 18px;
+  }
+}
+.blog__form-title{
+  color: #566358;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 10px;
+}
+.blog__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog__form {
+  flex: 1;
+}
+
+.blog__row {
+  margin-bottom: 20px;
+}
+
+.blog__textarea {
+  padding:16px 18px;
+  max-width: 500px;
+  height: 165px;
+  width: 100%;
+  color: #373e42;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left:18px;
+  border: 0px;
+  border-radius: 6px;
+  @include iphones{
+    height: 249px;
+  }
+}
+.blog__input{
+  margin:0;
+  padding: 18px;
+  height: 45px;
+  max-width: 300px;
+  width: 100%;
+  color: #373e42;
+  font-size: rem(16px);
+  font-weight: 400;
+}
+.blog-item__error{
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: red;
+}
