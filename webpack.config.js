@@ -13,15 +13,17 @@ const config = {
         entry: PATHS.source + '/js/include.js',
         adminStyles: PATHS.source + '/scss/admin-styles.js',
         admin: PATHS.source + '/js/admin/admin.js',
+        //project: PATHS.source + '/js/project/project.js',
+       // projectStyles: PATHS.source + '/scss/project-styles.js',
       },
       output: {
         path: path.resolve(__dirname, './build'),
         filename: 'js/[name].bundle.js'
       },
     plugins: [
-        new UglifyJSPlugin({
-            sourceMap: true
-        }),
+        // new UglifyJSPlugin({
+        //     sourceMap: true
+        // }),
         // new webpack.ProvidePlugin({
         //     $: 'jquery',
         //     jQuery: 'jquery',
@@ -30,11 +32,16 @@ const config = {
         new webpack.optimize.CommonsChunkPlugin({
           name: 'common',
         }),
-      new HtmlWebpackPlugin({
-        filename: 'admin.html',
-        chunks: ['admin', 'adminStyles','common'],
-        template: PATHS.source + '/templates/admin/admin.html'
-      }),
+        new HtmlWebpackPlugin({
+          filename: 'admin.html',
+          chunks: ['admin', 'adminStyles','common'],
+          template: PATHS.source + '/templates/admin/admin.html'
+        }),
+      // new HtmlWebpackPlugin({
+      //   filename: 'project.html',
+      //   chunks: ['project','common','projectStyles'],
+      //   template: PATHS.source + '/templates/project/project.pug'
+      // }),
     ],
     module: {
         rules: [
@@ -44,16 +51,18 @@ const config = {
               loader: 'html-loader',
               options: {
                 minimize: false,
-                removeComments: false,
+                //removeComments: false,
               }
             }
           },
           {
             test: /\.pug$/,
-            loader: 'pug-loader',
-            options: {
-                pretty: true
+            use:{
+              loader: 'pug-loader',
+              options: {
+                pretty: true, 
             }
+          }
         },
           {
             test: /\.css$/,
@@ -91,7 +100,7 @@ const config = {
                         './src/scss/layout/_media.scss'
                       ]
                     }
-                  }
+                  },
                 ]
               }),
               }
