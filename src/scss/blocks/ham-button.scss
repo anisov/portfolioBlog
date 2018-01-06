@@ -1,0 +1,46 @@
+.ham-button .ham-button__line{
+    width: 40px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    display: block;
+    margin: 8px auto;
+    transition: all 0.3s ease-in-out;
+    @include iphones{
+        width: 26px;
+        height: 3px;
+    }
+}
+.ham-button:hover{
+    cursor: pointer;
+}
+
+
+.ham-button.ham-button--active{
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.6s;
+    transform: rotate(45deg);
+}
+
+.ham-button.ham-button--active .ham-button__line:nth-child(2){
+    width: 0px;
+}
+
+.ham-button.ham-button--active .ham-button__line:nth-child(1),
+.ham-button.ham-button--active .ham-button__line:nth-child(3){
+    transition-delay: 0.3s;
+}
+
+.ham-button.ham-button--active .ham-button__line:nth-child(1){
+    transform: translateY(12px);
+    @include iphones{
+        transform: translateY(11px);
+    }
+  }
+  
+.ham-button.ham-button--active .ham-button__line:nth-child(3){
+    transform: translateY(-12px) rotate(90deg);
+    @include iphones{
+        transform: translateY(-11px) rotate(90deg);
+    }
+}
