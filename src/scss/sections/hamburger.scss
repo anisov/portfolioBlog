@@ -1,0 +1,131 @@
+.hamburger {
+    top: 0;
+    left: 0;
+    background-attachment: fixed;
+    position: fixed;
+    display: none;
+    background-size: 100%;
+    z-index: 100;
+}
+.hamburger__left{
+    top: 0;
+    height: 100%;
+    left: -100%;
+    width: 50%;
+    background: rgba(100, 145, 86, 0.85);
+    position: absolute;
+    &--active{
+        animation: ham-left 1.3s ease-out;
+        animation-fill-mode:forwards;
+    }
+    &--back{
+        animation: ham-left-back 1.5s ease-out;
+    }
+}
+@keyframes ham-left {
+    from {  left:-100% }    
+    to {  left:0 }  
+}
+@keyframes ham-right {
+    from {  right:-100% }   
+    to {  right:0 }  
+}
+
+@keyframes ham-left-back {
+    from {  left:0 }  
+    to {  left:-100% }    
+}
+@keyframes ham-right-back {
+    from {  right:0 } 
+    to {  right:-100% }    
+}
+.hamburger__right{
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100%;
+    background: rgba(100, 145, 86, 0.85);
+    position: absolute;
+    animation-fill-mode:none ;
+    &--active{
+        animation: ham-right 1.3s ease-out;
+        animation-fill-mode:forwards;
+    }
+    &--back{
+        animation: ham-right-back 1.5s ease-out;
+    }
+}
+.hamburger--visable{
+    display: block;
+
+}
+.hamburger__head{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;  
+}
+.hamburger__container{
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 70px;
+    @include iphones{
+        margin-top: 38px;
+    }
+}
+.hamburger__menu{
+    z-index: 1;
+    opacity: 0;
+    text-align: center;
+    transition: 0.8s;
+    transition-delay: 0;
+    &--active{
+        opacity: 1;
+        transition: opacity 1.1s;
+        transition-delay: .6s;
+    }
+}
+.hamburger__elem{
+    margin-bottom: 70px;
+    @include tablets{
+        margin-bottom: 85px;
+    }
+    @include iphones{
+        margin-bottom: 38px;
+    }
+    &--active{
+        margin-bottom: 42px;
+        @include tablets{
+            margin-bottom: 69px;
+        }
+        @include iphones{
+            margin-bottom: 26px;
+        }
+    }
+}
+.hamburger__href {
+    line-height: 1.05;
+    color: #ffffff;
+    font-family: "Sansus";
+    font-size: rem(63px);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .5s;
+    &--active{
+        letter-spacing: 1.57px;
+        @include line(#fff);
+    }
+    &:hover{
+        color:rgb(131, 224, 138);
+    }
+    @include tablets{
+        font-size: rem-t(49px);
+    }
+    @include iphones{
+        font-size: rem-t(35px);
+    }
+}
+
