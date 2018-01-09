@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function(event){
                     console.log(scripts.item(i))
                    file_loaded()
                 }
+                scripts.item(i).onerror = function(){
+                    console.log(scripts.item(i))
+                   file_loaded()
+                }
             }
         }
         function file_loaded(){
