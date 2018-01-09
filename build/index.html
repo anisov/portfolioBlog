@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="./js/preloader.bundle.js"></script>
     <meta charset="utf-8">
     <title></title>
     <meta content="" name="author">
@@ -10,17 +11,20 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <link rel="stylesheet" href="./css/main.min.css"><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g"></script>
-    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g&callback=initMap"type="text/javascript"></script>-->
-    <script src="./js/common.bundle.js" defer></script>
-    <script src="./js/entry.bundle.js" defer></script><!--[if lt IE 9]>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="./css/main.min.css"><script async='async' type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g"></script>
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g&callback=initMap" type="text/javascript"></script>-->
+    <script src="./js/common.bundle.js" async="async"></script>
+    <script src="./js/entry.bundle.js" async="async"></script><!--[if lt IE 9]>
+    <script async="async" src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="wrapper">
-      <section class="welcome webgl"><canvas class="webgl-canvas"></canvas><a class="welcome__auth js-click-change" href="">Авторизоваться</a>
+      <section class="welcome webgl">
+        <div class="preloader" id="page-preloader">
+          <div class="preloader__load"><span id="perc">0%</span></div>
+        </div><canvas class="webgl-canvas"></canvas><a class="welcome__auth js-click-change" href="">Авторизоваться</a>
         <div class="entry js-change-side">
           <div class="entry__img"></div>
           <div class="entry__name">Владимир Астахов</div>

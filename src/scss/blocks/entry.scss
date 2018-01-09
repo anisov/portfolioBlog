@@ -29,6 +29,13 @@
         backface-visibility: hidden;
     }
 }
+.entry__form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .entry__img{
     margin-top: 40px;
     width: 141px;

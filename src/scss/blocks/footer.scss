@@ -117,6 +117,7 @@
     font-weight: 700;
     line-height: 24px;
     transition: color .4s;
+
     @include laptops{
         margin-right: 19px;
     }
