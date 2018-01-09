@@ -40,6 +40,9 @@
 .slider__elem{
     position: relative;
     margin-bottom:20px;
+    &:hover  .slider__decorate, &:hover .slider__button {
+        background-color:darken($color: #6c9c5a, $amount: 10%);
+    }
 }
 .slider__decorate{
     position: absolute;
@@ -50,6 +53,7 @@
     height: 45px;
     background-color: #6c9c5a;
     border-radius: 26px 0 0 29px;
+    transition: background-color .4s;
     @include iphones{
         width: 35px;
         height: 40px;
@@ -70,6 +74,7 @@
     width: 200px;
     height: 45px;
     background-color: #6c9c5a;
+    transition: background-color .4s;
 
     color: #ffffff;
     font-family: Roboto;
@@ -185,15 +190,35 @@
     position: relative;
     width: 50%;
     height: 100%;
+    &:hover .slider__svg-up{
+        animation: svg-up .5s linear alternate infinite;
+    }
 }
 .slider__btn-prev{
     @extend .slider__btn-next;
+    &:hover .slider__svg-down{
+        animation: svg-down .5s linear alternate infinite;
+    }
 }
+
+@keyframes svg-down {
+    from {  top:0 }    
+    to {  top:20% }  
+}
+    
+@keyframes svg-up {
+    from {  bottom:0 }    
+    to {  bottom:20% }  
+}
+
 .slider__svg-up{
+    position: relative;
     width: 43px;
     height: 27px;
-    fill: #fff
+    fill: #fff;
 }
+
 .slider__svg-down{
     @extend .slider__svg-up;
+
 }

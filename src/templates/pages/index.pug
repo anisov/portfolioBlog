@@ -1,7 +1,12 @@
 extends ../base
 include ../config/_mixins
+block script
+    script(src='./js/preloader.bundle.js')
 block content
     section.welcome.webgl
+        div(id='page-preloader').preloader
+            .preloader__load
+                span(id='perc') 0%
         <canvas class="webgl-canvas"></canvas>
         a.welcome__auth.js-click-change(href="") Авторизоваться
         .entry.js-change-side

@@ -140,8 +140,13 @@
 }
 .reviews__up{
     text-align: center;
-    width: 100%;
+    width: 30px;
     margin-bottom: 70px;
+    display: block;
+    padding: 0;
+    background: none;
+    border: 0;
+    z-index: 4;
     @include tablets{
         margin-bottom: 57px;
     }

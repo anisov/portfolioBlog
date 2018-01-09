@@ -1,0 +1,29 @@
+.preloader{
+    background: url('../img/welcome/preloader.jpg') center center no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $green;
+    z-index: 10;
+    transition: 1s all;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--done{
+        opacity: 1;
+        visibility: hidden;
+    }
+}
+.preloader__load{
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: rem(32px);
+    font-weight: 300;
+    width: 75px;
+    height: 75px;
+}

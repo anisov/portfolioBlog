@@ -10,13 +10,13 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <link rel="stylesheet" href="./css/main.min.css"><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g"></script>
-    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g&callback=initMap"type="text/javascript"></script>-->
-    <script src="./js/common.bundle.js" defer></script>
-    <script src="./js/entry.bundle.js" defer></script><!--[if lt IE 9]>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="./css/main.min.css"><script async='async' type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g"></script>
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g&callback=initMap" type="text/javascript"></script>-->
+    <script src="./js/common.bundle.js" async="async"></script>
+    <script src="./js/entry.bundle.js" async="async"></script><!--[if lt IE 9]>
+    <script async="async" src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="wrapper">
@@ -58,11 +58,11 @@
           <div class="promo__name">Владимир Астахов</div>
           <div class="promo__desc">Личный сайт веб разработчика</div>
         </div>
-        <div class="promo__down"> 
+        <button class="promo__down js-window-down">
           <svg class="svg-down svg-down--arrow_down">
             <use xlink:href="img/sprite/sprite.svg#arrow_down"></use>
           </svg>
-        </div>
+        </button>
       </section>
       <section class="section hamburger js-open-menu">
         <div class="hamburger__left"></div>
@@ -93,9 +93,9 @@
         <div class="slider">
           <div class="slider__info">
             <div class="slider__title">
-              <div class="sub-title">Сайт школы онлайн Образования</div>
+              <div class="sub-title">{{slider.title}}</div>
             </div>
-            <div class="slider__technologies">HTML , CSS, JAVASCRIPT</div>
+            <div class="slider__technologies"><span v-for="tech in slider.tech ">{{tech}}, </span></div>
             <div class="slider__elem">
               <div class="slider__decorate">
                 <svg class="slider__svg-link slider__svg-link--link">
@@ -105,23 +105,19 @@
             </div>
           </div>
           <div class="slider__display">
-            <div class="slider__work slider__work--active"><img class="slider__site" src="./img/work/work-5.png" alt="Моя работа"></div>
-            <div class="slider__work"><img class="slider__site" src="./img/work/work-1.png" alt="Моя работа"></div>
-            <div class="slider__work"><img class="slider__site" src="./img/work/work-2.png" alt="Моя работа"></div>
-            <div class="slider__work"><img class="slider__site" src="./img/work/work-3.png" alt="Моя работа"></div>
-            <div class="slider__work"><img class="slider__site" src="./img/work/work-4.png" alt="Моя работа"></div>
+            <div class="slider__work slider__work--active"><img class="slider__site" :src="slider.image" alt="Моя работа"></div>
           </div>
           <div class="slider__btns">
-            <div class="slider__btn-prev"> 
-              <div class="slider__btn-work slider__btn-work--active"><img class="slider__site slider__site--cover" src="./img/work/work-1.png" alt="Моя работа"></div>
+            <div class="slider__btn-prev" @click="changeSlidePrev"> 
+              <div class="slider__btn-work slider__btn-work--active"><img class="slider__site slider__site--cover" :src="slideForPrev.image" alt="Моя работа"></div>
               <div class="slider__bg-prev"> 
                 <svg class="slider__svg-down slider__svg-down--portf_arrow_down">
                   <use xlink:href="img/sprite/sprite.svg#portf_arrow_down"></use>
                 </svg>
               </div>
             </div>
-            <div class="slider__btn-next">
-              <div class="slider__btn-work slider__btn-work--active"><img class="slider__site slider__site--cover" src="./img/work/work-4.png" alt="Моя работа"></div>
+            <div class="slider__btn-next" @click="changeSlideNext">
+              <div class="slider__btn-work slider__btn-work--active"><img class="slider__site slider__site--cover" :src="slideForNext.image" alt="Моя работа"></div>
               <div class="slider__bg-next"> 
                 <svg class="slider__svg-up slider__svg-up--portf_arrow_up">
                   <use xlink:href="img/sprite/sprite.svg#portf_arrow_up"></use>
@@ -172,11 +168,11 @@
             </div>
           </form>
         </div>
-        <div class="reviews__up">
+        <button class="reviews__up js-window-up">
           <svg class="reviews__up-svg reviews__up-svg--arrow_down">
             <use xlink:href="img/sprite/sprite.svg#arrow_down"></use>
           </svg>
-        </div>
+        </button>
         <footer class="footer">
           <div class="footer__one">
             <div class="footer__col"> 

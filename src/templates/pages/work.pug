@@ -1,6 +1,6 @@
 extends ../base-page.pug
 block down
-    .promo__down 
+    button.promo__down.js-window-down
         +svgIcon('svg-down','arrow_down')
 block main-content
     section.section.work
@@ -16,32 +16,25 @@ block main-content
         .slider
             .slider__info
                 .slider__title
-                    .sub-title Сайт школы онлайн Образования
-                .slider__technologies HTML , CSS, JAVASCRIPT
+                    .sub-title {{slider.title}}
+                .slider__technologies
+                    span(v-for = 'tech in slider.tech ') {{tech}}, 
                 .slider__elem
                     .slider__decorate
                         +svgIcon('slider__svg-link', 'link')
                     a.slider__button(href='/') Посмотреть сайт
             .slider__display
                 .slider__work.slider__work--active
-                    img.slider__site(src="./img/work/work-5.png", alt="Моя работа")
-                .slider__work
-                    img.slider__site(src="./img/work/work-1.png", alt="Моя работа")                    
-                .slider__work
-                    img.slider__site(src="./img/work/work-2.png", alt="Моя работа")  
-                .slider__work
-                    img.slider__site(src="./img/work/work-3.png", alt="Моя работа")  
-                .slider__work
-                    img.slider__site(src="./img/work/work-4.png", alt="Моя работа")  
+                    img.slider__site(:src="slider.image", alt="Моя работа")  
             .slider__btns
-                div.slider__btn-prev 
+                div(@click='changeSlidePrev').slider__btn-prev 
                     .slider__btn-work.slider__btn-work--active
-                        img.slider__site.slider__site--cover(src="./img/work/work-1.png", alt="Моя работа")      
+                        img.slider__site.slider__site--cover(:src="slideForPrev.image", alt="Моя работа")      
                     .slider__bg-prev  
                         +svgIcon('slider__svg-down', 'portf_arrow_down')
-                div.slider__btn-next
+                div(@click='changeSlideNext').slider__btn-next
                     .slider__btn-work.slider__btn-work--active
-                        img.slider__site.slider__site--cover(src="./img/work/work-4.png", alt="Моя работа")          
+                        img.slider__site.slider__site--cover(:src="slideForNext.image", alt="Моя работа")          
                     .slider__bg-next 
                         +svgIcon('slider__svg-up', 'portf_arrow_up') 
 
@@ -76,6 +69,6 @@ block main-content
                 .form-contact__btns
                     button.send-button(type="submit") Отправить
                     button(type="reset").send-reset Очистить
-        .reviews__up
+        button.reviews__up.js-window-up
             +svgIcon('reviews__up-svg','arrow_down')       
         include ../includes/footer            

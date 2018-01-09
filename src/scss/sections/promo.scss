@@ -50,10 +50,16 @@
     }
 }
 .promo__down{
+    z-index: 4;
     position: absolute;
     bottom: 10%;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
 }
 .svg-down{
     fill:#c2d4c9;
