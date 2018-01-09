@@ -12,8 +12,8 @@ const config = {
     entry: {
         entry: PATHS.source + '/js/include.js',
         preloader: PATHS.source + '/js/index/preloader.js',
-        adminStyles: PATHS.source + '/scss/admin-styles.js',
-        admin: PATHS.source + '/js/admin/admin.js',
+        //adminStyles: PATHS.source + '/scss/admin-styles.js',
+        //admin: PATHS.source + '/js/admin/admin.js',
         //project: PATHS.source + '/js/project/project.js',
        // projectStyles: PATHS.source + '/scss/project-styles.js',
       },
@@ -33,11 +33,11 @@ const config = {
         // new webpack.optimize.CommonsChunkPlugin({
         //   name: 'common',
         // }),
-        new HtmlWebpackPlugin({
-          filename: 'admin.html',
-          chunks: ['admin', 'adminStyles','common'],
-          template: PATHS.source + '/templates/admin/admin.html'
-        }),
+        // new HtmlWebpackPlugin({
+        //   filename: 'admin.html',
+        //   chunks: ['admin', 'adminStyles','common'],
+        //   template: PATHS.source + '/templates/admin/admin.html'
+        // }),
       // new HtmlWebpackPlugin({
       //   filename: 'project.html',
       //   chunks: ['project','common','projectStyles'],

@@ -15,9 +15,16 @@
     align-items: center;
     justify-content: center;
     &--done{
-        opacity: 1;
+        animation: preload-top 1.2s ease-in-out;
+        animation-fill-mode:forwards;
+    }
+    &--hidden{
         visibility: hidden;
     }
+}
+@keyframes preload-top {
+    from {  top:0 }    
+    to {  top: -100% }  
 }
 .preloader__load{
     color: #ffffff;
@@ -26,4 +33,37 @@
     font-weight: 300;
     width: 75px;
     height: 75px;
+}
+.preloader__svg {
+    stroke: $white;
+    width: 80px;
+    height: 90px;
+}
+.preloader__path {
+    stroke-dasharray: 100;
+    stroke: #fff;
+    &--first {
+      animation: preloader 1s ease-in-out infinite;
+    }
+    &--second {
+      animation: preloader 1.2s ease-in-out infinite;
+    }
+    &--third {
+      animation: preloader 1.4s ease-in-out infinite;
+    }
+  }
+.preloader__perc{
+    fill: #fff;
+    font-family: Roboto;
+    font-size: rem(24px);
+    font-weight: 400;
+    line-height: 24px;
+}
+@keyframes preloader {
+    from {
+      stroke-dashoffset: 200;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
 }
