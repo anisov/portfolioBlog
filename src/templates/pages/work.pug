@@ -60,15 +60,18 @@ block main-content
                 .reviews__author Сабанцев Владимир
                     p.reviews__author-info — преподаватель
         .form-contact.reviews__form
-            form.form-contact__send(method="post")
+            form.form-contact__send.js-form-send(method="post")
                 .form-contact__title
                     .sub-title.sub-title--big Связаться со мной
-                input(type="text", name='name', placeholder ='Имя').form-contact__name
-                input(type="email", name="email" placeholder ='Email').form-contact__email
-                textarea( name="comment" placeholder ='Ваше сообщение').form-contact__mes
+                input(v-model="name" type="text", name='name', placeholder ='Имя').form-contact__name
+                .form-contact__error {{validation.firstError('name')}}
+                input(v-model="email" type="email", name="email" placeholder ='Email').form-contact__email
+                .form-contact__error {{validation.firstError('email')}}
+                textarea(v-model="comment" name="comment" placeholder ='Ваше сообщение').form-contact__mes
+                .form-contact__error {{validation.firstError('comment')}}
                 .form-contact__btns
-                    button.send-button(type="submit") Отправить
-                    button(type="reset").send-reset Очистить
+                    button.send-button(:disabled="validation.hasError('email') || !name || !comment" @click="sendData" type="submit") Отправить
+                    button(type="reset").send-reset Очистить    
         button.reviews__up.js-window-up
             +svgIcon('reviews__up-svg','arrow_down')       
         include ../includes/footer            

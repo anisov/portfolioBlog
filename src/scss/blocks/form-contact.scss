@@ -48,8 +48,18 @@
         height: 40px;
     }
 }
+.form-contact__error{
+    font-family: Roboto;
+    font-size: rem(16px);
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: red;
+    width: 100%;
+    text-align: left;
+    margin-left: 57px;
+}
 .form-contact__email{
-    @extend .form-contact__name
+    @extend .form-contact__name 
 }
 .form-contact__mes{
     resize: none; 
@@ -89,5 +99,5 @@
 }
 .send-reset{
     border-radius: 0 0 8px 0;
-    @extend .send-button
+    @extend .send-button 
 }
