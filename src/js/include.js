@@ -7,4 +7,5 @@ import burger from './index/hamburger';
 import slider from './index/slider';
 import scroll from './index/scroll';
 import button from './index/button';
+import form from './index/form';
 //import preloader from './index/preloader';  

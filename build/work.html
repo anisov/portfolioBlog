@@ -172,16 +172,19 @@
           </div>
         </div>
         <div class="form-contact reviews__form">
-          <form class="form-contact__send" method="post">
+          <form class="form-contact__send js-form-send" method="post">
             <div class="form-contact__title">
               <div class="sub-title sub-title--big">Связаться со мной</div>
             </div>
-            <input class="form-contact__name" type="text" name="name" placeholder="Имя">
-            <input class="form-contact__email" type="email" name="email" placeholder="Email">
-            <textarea class="form-contact__mes" name="comment" placeholder="Ваше сообщение"></textarea>
+            <input class="form-contact__name" v-model="name" type="text" name="name" placeholder="Имя">
+            <div class="form-contact__error">{{validation.firstError('name')}}</div>
+            <input class="form-contact__email" v-model="email" type="email" name="email" placeholder="Email">
+            <div class="form-contact__error">{{validation.firstError('email')}}</div>
+            <textarea class="form-contact__mes" v-model="comment" name="comment" placeholder="Ваше сообщение"></textarea>
+            <div class="form-contact__error">{{validation.firstError('comment')}}</div>
             <div class="form-contact__btns">
-              <button class="send-button" type="submit">Отправить</button>
-              <button class="send-reset" type="reset">Очистить</button>
+              <button class="send-button" :disabled="validation.hasError('email') || !name || !comment" @click="sendData" type="submit">Отправить</button>
+              <button class="send-reset" type="reset">Очистить    </button>
             </div>
           </form>
         </div>
