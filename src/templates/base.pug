@@ -2,6 +2,7 @@ block variables
 doctype html
 html
   head
+    script(src='./js/common.bundle.js')
     script(src='./js/preloader.bundle.js')
     meta(charset="utf-8")
     title #{title}
@@ -14,12 +15,9 @@ html
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.css")
     script(async='async' src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.min.js")
     script(async='async' src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/plugins/line-numbers/prism-line-numbers.min.js")
-    //- favicon block start
-    //- favicon block end
     link(rel='stylesheet' href='./css/main.min.css')
     <script async='async' type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g"></script>
     //<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgmHq_4IWqfJAwGZGCnskS3WoWeqX01g&callback=initMap" type="text/javascript"></script>
-    script(src='./js/common.bundle.js' async='async')
     script(src='./js/entry.bundle.js' async='async')
     <!--[if lt IE 9]>
     script(async='async' src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")

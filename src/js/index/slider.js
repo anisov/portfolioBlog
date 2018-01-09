@@ -57,7 +57,6 @@ new Vue ({
     methods:{
         changeSlidePrev(){
             var changeSlider = this.currentSlider - 1
-            console.log(changeSlider)
             if (changeSlider >=0){
                 return this.currentSlider = changeSlider
             } else{
