@@ -14,8 +14,8 @@ const config = {
         preloader: PATHS.source + '/js/index/preloader.js',
         adminStyles: PATHS.source + '/scss/admin-styles.js',
         admin: PATHS.source + '/js/admin/admin.js',
-        project: PATHS.source + '/js/project/project.js',
-        projectStyles: PATHS.source + '/scss/project-styles.js',
+        //project: PATHS.source + '/js/project/project.js',
+        //projectStyles: PATHS.source + '/scss/project-styles.js',
       },
       output: {
         path: path.resolve(__dirname, './build'),

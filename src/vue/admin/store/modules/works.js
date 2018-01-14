@@ -1,30 +1,31 @@
 const works = {
     namespaced: true,
     state: {
-      data: [{
-        title: 'Тест',
-        technology: 'Тест',
-        file: 'Тест',
-        }
-      ]
+      message:''
     },
     getters: {
       works(state){
         return state.data
+      },
+      message(state){
+        return state.message
       }
     },
     mutations: {
       addWork(state, fields) {
-        state.data.push(          
-          {
-          title: fields.get('title'),
-          tech:fields.get('technology'),
-          file:fields.get('file'),
-          })
+        console.log(fields)
+        fetch("../api/work", {
+          method: 'POST',
+          body: fields
+        }).then(response => {
+          return response.json()
+        })
+        .then(data => {
+          state.message = data
+        })
       },
     },
     actions: {
-
     }
   }
   

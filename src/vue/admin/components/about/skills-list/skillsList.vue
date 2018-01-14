@@ -50,7 +50,6 @@ export default {
         this.$validate().then(success => {
           if (success) {
             this.addNewSkill({
-              id: Math.round(Math.random()*1000000),
               name: this.newSkill,
               percents:0,
               type: this.checkSkillType(this.skillType)

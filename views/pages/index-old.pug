@@ -1,0 +1,21 @@
+extends ../base-welcome-old
+block variables
+  - var title = 'Главная страница'
+
+block welcome__auth
+    a.welcome__auth(href="./auth.html") Авторизоваться
+
+block entry
+    .entry__img
+    .entry__name Владимир Астахов
+    .entry__desc Личный сайт веб разработчика
+    .welcome__socials
+        include ../includes/_social.pug
+
+block entry__tabs
+    each tab in [['Мои работы', './work.html'],['Обо мне', './about.html'],['Блог', './blog.html']]
+        li.entry__tab-elem
+            a.entry__tab-link(href=`${tab[1]}`) #{tab[0]}        
+
+
+                

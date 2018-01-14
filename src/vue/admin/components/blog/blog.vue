@@ -2,8 +2,9 @@
   .blog
     h2.blog__title Страница «Блог»
     .blog__container
-      .blog__form
+      form.blog__form(action='../api/blog' method="POST" enctype="application/x-www-form-urlencoded")
         h3.blog__form-title Добавить запись
+        .blog__message {{message.message}}
         .blog__row
           app-input(
             type="text",
@@ -30,6 +31,7 @@
           app-button(
             title="Добавить"
             @click="addPost"
+            type="submit"
           )
       .blog__post
         ul.blog__post-list
@@ -61,7 +63,7 @@ export default {
         title: '',
         date: '',
         text: ''
-      }
+      },
     }
   },
   methods: {
@@ -79,7 +81,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('posts', ['posts'])
+    ...mapGetters('posts', ['posts','message']),
   },
   components: {
     appInput: require('../common/inputs/input'),

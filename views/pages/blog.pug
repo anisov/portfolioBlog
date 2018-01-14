@@ -1,0 +1,43 @@
+extends ../base-page.pug
+block promo__block 
+    .promo__block
+        .promo__img: img.promo__my-img(src="img/welcome/people-one.jpg", alt="Я")
+        .section-title.promo__title Блог
+        .promo__desc Статьи, которые я написал
+
+block down
+    button.promo__down.js-window-down 
+        +svgIcon('svg-down','arrow_down')
+
+
+block main-content     
+    section.blog
+        .triangle.blog__triangle
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 890 85" preserveaspectratio="none" class="traingle">
+                <polygon class = "" points="0,0   0,85   445.100,85   445.100,75.1"></polygon>
+                <polygon class = "" points="890,0   890,85  445,85  445,74.9999"></polygon>
+            </svg>
+        .blog__left
+            ul.blog__list.js-take-menu
+                if (articles)
+                    each item in articles 
+                        li.blog__elem.js-take-menuItem
+                            span(class= `blog__elem-link` href='/')= item.title
+        .blog__right
+            if (articles)
+                each index in articles
+                    article.blog__article.js-take-news
+                        h2.sub-title.blog__title= index.title
+                        - 
+                            var date= new Date(index.date).toLocaleDateString('ru', { 
+                                  year: 'numeric', 
+                                  month: '2-digit', 
+                                  day: '2-digit'
+                                  })
+                        .blog__date= date
+                        .blog__text= index.body
+                        if (index.code)
+                            pre.blog__code.line-numbers.language-js
+                                code.language-js!= index.code
+                           
+    include ../includes/footer                              

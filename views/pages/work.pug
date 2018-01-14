@@ -1,0 +1,79 @@
+extends ../base-page.pug
+block down
+    button.promo__down.js-window-down
+        +svgIcon('svg-down','arrow_down')
+block main-content
+    section.section.work
+        .triangle.work__triangle
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 890 85" preserveaspectratio="none" class="traingle">
+                <polygon class = "triangle__work" points="0,0   0,85   445.100,85   445.100,75.1"></polygon>
+                <polygon class = "triangle__work" points="890,0   890,85   445,85   445,74.9999"></polygon>
+            </svg>
+        .work__info 
+            .title-block.title-block--size.work__title
+                +svgIcon('title-block__svg','works_header')
+                .title-block__title.main-title Мои работы        
+        .slider
+            .slider__info
+                .slider__title
+                    .sub-title {{slider.title}}
+                .slider__technologies
+                    span(v-for = 'tech in slider.tech ') {{tech}}, 
+                .slider__elem
+                    .slider__decorate
+                        +svgIcon('slider__svg-link', 'link')
+                    a.slider__button(href='/') Посмотреть сайт
+            .slider__display
+                .slider__work.slider__work--active
+                    img.slider__site(:src="slider.image", alt="Моя работа")  
+            .slider__btns
+                div(@click='changeSlidePrev').slider__btn-prev 
+                    .slider__btn-work.slider__btn-work--active
+                        img.slider__site.slider__site--cover(:src="slideForPrev.image", alt="Моя работа")      
+                    .slider__bg-prev  
+                        +svgIcon('slider__svg-down', 'portf_arrow_down')
+                div(@click='changeSlideNext').slider__btn-next
+                    .slider__btn-work.slider__btn-work--active
+                        img.slider__site.slider__site--cover(:src="slideForNext.image", alt="Моя работа")          
+                    .slider__bg-next 
+                        +svgIcon('slider__svg-up', 'portf_arrow_up') 
+
+    section.section.reviews
+        .title-block.reviews__title
+            +svgIcon('title-block__svg','about_header')
+            .title-block__title.main-title Что обо мне говорят
+        .reviews__comment
+            .reviews__comment-col
+                .reviews__quotes 
+                    <i class="reviews__quotes-text fa fa-quote-left" aria-hidden="true"></i>
+                .reviews__block-img
+                    img.reviews__img(src="./img/work/comment.jpg", alt="")
+                .reviews__block-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .reviews__author Ковальчук Дмитрий
+                    p.reviews__author-info — основатель Loftschool
+            .reviews__comment-col
+                .reviews__quotes 
+                    <i class="reviews__quotes-text fa fa-quote-left" aria-hidden="true"></i>
+                .reviews__block-img
+                    img.reviews__img(src="./img/work/comment1.jpg", alt="")
+                .reviews__block-text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                .reviews__author Сабанцев Владимир
+                    p.reviews__author-info — преподаватель
+        .form-contact.reviews__form
+            form.form-contact__send.js-form-send(action='/contact' method="POST" enctype="application/x-www-form-urlencoded")
+                .form-contact__title
+                    .sub-title.sub-title--big Связаться со мной
+                if (msg)
+                    .status= msg
+                input(v-model="name" type="text", name='name', placeholder ='Имя').form-contact__name
+                .form-contact__error {{validation.firstError('name')}}
+                input(v-model="email" type="email", name="email" placeholder ='Email').form-contact__email
+                .form-contact__error {{validation.firstError('email')}}
+                textarea(v-model="comment" name="comment" placeholder ='Ваше сообщение').form-contact__mes
+                .form-contact__error {{validation.firstError('comment')}}
+                .form-contact__btns
+                    button.send-button(:disabled="validation.hasError('email') || !name || !comment" @click="sendData" type="submit") Отправить
+                    button(type="reset").send-reset Очистить    
+        button.reviews__up.js-window-up
+            +svgIcon('reviews__up-svg','arrow_down')       
+        include ../includes/footer            

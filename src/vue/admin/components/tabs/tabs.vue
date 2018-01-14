@@ -16,9 +16,9 @@ export default {
   data() {
    return{
     tabs: [
-      { name: 'Обо мне', route: '/admin.html' },
-      { name: 'Блог', route: '/admin.html/admin-blog' },
-      { name: 'Мои работы', route: '/admin.html/admin-works' }
+      { name: 'Обо мне', route: '/admin' },
+      { name: 'Блог', route: '/admin/admin-blog' },
+      { name: 'Мои работы', route: '/admin/admin-works' }
     ]
    }
   }

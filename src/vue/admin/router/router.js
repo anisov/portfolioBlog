@@ -5,15 +5,15 @@ Vue.use(VueRouter)
 
 const routes = [
     {
-        path:'/admin.html',
+        path:'/admin',
         component: require('../components/about/about.vue')
     },
     {
-        path:'/admin.html/admin-works',
+        path:'/admin/admin-works',
         component: require('../components/works/works.vue')
     },
     {
-        path:'/admin.html/admin-blog',
+        path:'/admin/admin-blog',
         component: require('../components/blog/blog.vue')
     }
 ]

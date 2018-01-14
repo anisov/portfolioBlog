@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     removeSkill() {
-      this.$emit('removeSkill', this.skill.id)
+      this.$emit('removeSkill', this.skill._id)
     }
   }
 }
