@@ -2,8 +2,9 @@
   .works
     h2.works__title Страница «Мои работы»
     .works__container
-      form.works__form
+      form.works__form(method="POST" enctype="multipart/form-data")
         h3.works__form-title Добавить работу
+        .message-post {{message.message}}
         .works__row
           app-input(
             placeholder="Название проекта"
@@ -34,8 +35,6 @@
             title="Добавить"
             @click="sendData"
           )
-      .works__example
-        div( v-for="work in works") {{work.title}} {{work.technology}} {{work.file}}
 </template>
 <script>
 
@@ -81,8 +80,8 @@ export default {
       this.$validate().then(success => {
         if (success){
           let formData = new FormData()
-          formData.append('file', this.fields.file)
-          formData.append('technology', this.fields.technology)
+          formData.append('image', this.fields.file)
+          formData.append('tech', this.fields.technology)
           formData.append('title', this.fields.title)
           this.addWork(formData)
           console.log('Данные отправлены')
@@ -96,7 +95,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('works', ['works'])
+    ...mapGetters('works', ['message'])
   },
   components: {
     appInput: require('../common/inputs/input'),

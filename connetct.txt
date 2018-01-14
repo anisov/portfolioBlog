@@ -1,0 +1,1 @@
+c:\mongoDB\bin\mongod --config c:\mongoDB\bin\mongodb.config

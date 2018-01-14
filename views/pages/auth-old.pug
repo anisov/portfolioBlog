@@ -1,0 +1,35 @@
+extends ../base-welcome-old
+block variables
+  - var title = 'Авторизация'
+
+block entry
+        .entry__auth-title Авторизуйтесь
+        .entry__elem
+            .entry__decorate
+                +svgIcon('entry__svg-auth', 'login')
+            input.entry__login(placeholder='Логин')
+        .entry__elem
+            .entry__decorate
+                +svgIcon('entry__svg-auth', 'password')
+            input.entry__password(type = 'password' placeholder='Пароль')
+        label.entry__checkbox()
+            input(type="checkbox" name='bool' value='True').entry__input-checkbox
+            span.entry__checkbox-styled
+            span.entry__checkbox-title Я человек
+        .entry__robot Вы точно не робот?
+        .entry__answer
+            label.entry__radio()
+                input(type="radio" name='bool' value='True').entry__input-radio
+                span.entry__radio-styled
+                span.entry__radio-title Да 
+
+            label.entry__radio()
+                input(type="radio" name='bool' value='False').entry__input-radio
+                span.entry__radio-styled
+                span.entry__radio-title Не уверен  
+
+block entry__tabs  
+    li.entry__auth-botton
+        a.entry__tab-link(href='./') На главную
+    li.entry__auth-botton
+        button(type="submit").entry__submit Войти

@@ -1,0 +1,27 @@
+{    
+  "server": "http://localhost:3000",
+  "http": {
+    "port": 3000,
+    "host": "localhost",
+    "publicRoot": "public"
+  },
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "anisovblog",
+    "user": "",
+    "password": ""
+  },
+  "mail": {
+    "subject": "Сообщение с сайта-портфолио",
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "loftschoolemail@gmail.com",
+        "pass": "qwezxc24"
+      }
+    }
+  }
+}
