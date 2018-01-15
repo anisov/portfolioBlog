@@ -113,8 +113,8 @@ function styles() {
             }
         })) // При ошибке сервера, слежение не останавливалось
         .pipe(sassGlob())
-        .pipe(sourcemaps.init())
-        .pipe(gulpIf(isDev, sourcemaps.init()))// Нужен для *.scss в import
+        //.pipe(sourcemaps.init())
+        //.pipe(gulpIf(isDev, sourcemaps.init()))// Нужен для *.scss в import
         .pipe(sass({
             includePaths: require('node-normalize-scss').includePaths
         })) //{outputStyle:'compressed'}
@@ -122,7 +122,7 @@ function styles() {
         //.pipe(groupMediaQueries())
         .pipe(cleanCss())
         .pipe(rename({suffix:'.min'}))
-        .pipe(gulpIf(isDev, sourcemaps.write('/')))
+        //.pipe(gulpIf(isDev, sourcemaps.write('/')))
         .pipe(gulp.dest(paths.styles.dest))
 }
 

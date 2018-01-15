@@ -23,7 +23,7 @@ const config = {
       },
     plugins: [
         new UglifyJSPlugin({
-            sourceMap: true
+            sourceMap: false
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -154,16 +154,6 @@ const config = {
           'node_modules',
         ]
       },
-      devServer: {
-        historyApiFallback: true,
-        noInfo: false,
-        overlay: true,
-        open: false
-      },
-      performance: {
-        hints: false
-      },
-      devtool: '#eval-source-map'
     }
 
 module.exports = config;

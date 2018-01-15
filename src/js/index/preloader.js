@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 
         for( let i = 0; i < links_count; i++){
             links.item(i).onload = function(){
-                console.log( links.item(i))
                 file_loaded()
             }
         }
@@ -26,11 +25,9 @@ document.addEventListener("DOMContentLoaded", function(event){
         for( let i = 0; i < scripts_count; i++){
             if (scripts.item(i).async){
                 scripts.item(i).onload = function(){
-                    console.log(scripts.item(i))
                    file_loaded()
                 }
                 scripts.item(i).onerror = function(){
-                    console.log(scripts.item(i))
                    file_loaded()
                 }
             }
@@ -38,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function(event){
         function file_loaded(){
             file_loaded_count++;
             percent.innerHTML = (((100 / (scripts_total_count + links_count))  * file_loaded_count) << 0)+ '%';
-            console.log((((100 / (scripts_total_count + links_count))  * file_loaded_count) << 0)+ '%')
             if (file_loaded_count >= (scripts_total_count + links_count)) {
                 setTimeout(()=>{
                     if (!preloader.classList.contains('preloader--done')){

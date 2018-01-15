@@ -11,13 +11,13 @@ const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 var index = require('./routes/index');
 var indexApi = require('./api/routes/index');
-
-
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use('/', index);
+app.use('/api', indexApi);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -25,7 +25,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(session({
@@ -40,8 +39,6 @@ app.use(session({
   store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-app.use('/', index);
-app.use('/api', indexApi);
 const isAdmin = (req, res, next) => {
   if (req.session.isAdmin) {
     return next();

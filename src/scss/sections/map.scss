@@ -4,6 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include iphones{
+        min-height: 800px;
+    }
 }
 .map__contacts{
     position: absolute;

@@ -31,6 +31,7 @@
         height: 22px;
     }
     &:hover{
+        transition: .4s;  
         fill:#4e8839;
         opacity: 1;
     }
@@ -65,11 +66,13 @@
         }
     }
     &:hover{
+        transition: .4s;  
         fill:#4e8839;
         opacity: 1;
     }
 }
 .social__svg--github{
+    transition: .4s;  
     width: 26px;
     height: 22px;
 }
