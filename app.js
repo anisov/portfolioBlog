@@ -12,20 +12,17 @@ const mongoose = require('mongoose');
 var index = require('./routes/index');
 var indexApi = require('./api/routes/index');
 var app = express();
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
-app.use('/', index);
-app.use('/api', indexApi);
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'build')));
+
+const isAdmin = (req, res, next) => {
+  if (req.session.isAdmin) {
+    return next();
+  }
+  res.redirect('/');
+};
 
 app.use(session({
   secret: 'anisov',
@@ -39,12 +36,20 @@ app.use(session({
   store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-const isAdmin = (req, res, next) => {
-  if (req.session.isAdmin) {
-    return next();
-  }
-  res.redirect('/');
-};
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use('/', index);
+app.use('/api', indexApi);
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+
+
 app.use('/admin',isAdmin, function(req,res){
   res.sendFile(path.resolve(__dirname, './build', 'admin.html'))
 });
@@ -63,6 +68,7 @@ app.use(function(req, res, next) {
 
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;
+  console.log(err.message)
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   res.status(err.status || 500);

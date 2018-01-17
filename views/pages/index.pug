@@ -16,7 +16,7 @@ block content
                         li.entry__tab-elem
                             a.entry__tab-link(href=`${tab[1]}`) #{tab[0]}    
         .entry.entry--back-side.js-change-side
-            form.entry__form(action='/login' method="POST")
+            form.entry__form(action='/login' method="POST" enctype="application/x-www-form-urlencoded")
                 .entry__auth-title Авторизуйтесь
                 if (msg)
                     .entry__status= msg

@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer');
 const config = require('../config/config')
+const http = require('request');
+const apiOptions =  require('../config/config');
 
 module.exports.getIndex = (req, res, next) => {
   res.render('pages/index', {
@@ -7,9 +9,6 @@ module.exports.getIndex = (req, res, next) => {
     msg: req.query.msg
   });
 };
-const http = require('request');
-
-const apiOptions =  require('../config/config');
 
 module.exports.authorization = function (req, res) {
   if (!req.body.login || !req.body.password) {
