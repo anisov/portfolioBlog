@@ -8,4 +8,6 @@ import slider from './index/slider';
 import scroll from './index/scroll';
 import button from './index/button';
 import form from './index/form';
+import blog from './index/blog';
+import about from './index/about';
 //import preloader from './index/preloader';  

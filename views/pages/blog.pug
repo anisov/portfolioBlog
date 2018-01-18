@@ -23,6 +23,7 @@ block main-content
                     each item in articles 
                         li.blog__elem.js-take-menuItem
                             span(class= `blog__elem-link` href='/')= item.title
+                .blog__list-open.js-blog-open
         .blog__right
             if (articles)
                 each index in articles
