@@ -21,6 +21,14 @@ if (document.querySelector('.slider')) {
                     return this.sliders[this.slidersLength - 1]
                 }
             },
+            slideForPrevPrev() {
+                if (this.currentSlider > 0) {
+                    var currentPrevSlider = this.currentSlider - 2
+                    return this.sliders[currentPrevSlider]
+                } else {
+                    return this.sliders[this.slidersLength - 2]
+                }
+            },
             slideForNext() {
                 if (this.currentSlider < this.slidersLength - 1) {
                     var currentNextSlider = this.currentSlider + 1

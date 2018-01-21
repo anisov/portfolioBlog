@@ -39,7 +39,9 @@ module.exports.createWork = (req, res) => {
             let item = new Model({
                 title: fields.title,
                 tech: fields.tech,
-                image: image
+                image: image,
+                href: fields.href,
+                
             });
             item
                 .save()

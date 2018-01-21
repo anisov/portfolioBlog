@@ -22,6 +22,14 @@
           ).works__input
         .works__error-message {{validation.firstError('fields.technology')}}
         .works__row
+          app-input(
+            placeholder="Ссылка"
+            type="text"
+            v-model="fields.href"
+            :nothing='fields.href'
+          ).works__input
+        .works__error-message {{validation.firstError('fields.href')}}
+        .works__row
           label.works__upload
             input.works__type-file(
               type="file"
@@ -50,6 +58,9 @@ export default {
     'fields.technology': function (value) {
       return Validator.value(value).required("Поле должно быть заполнено");
     },
+    'fields.href': function (value) {
+      return Validator.value(value).required("Поле должно быть заполнено");
+    },
     'fields.file': function (value) {
       return Validator.custom(() => {
         if (Validator.isEmpty(value)) return 'Загрузите пожалуйста картинку'
@@ -66,7 +77,8 @@ export default {
       fields: {
         title: '',
         technology: '',
-        file: null
+        file: null,
+        href:''
       }
     }
   },
@@ -83,11 +95,13 @@ export default {
           formData.append('image', this.fields.file)
           formData.append('tech', this.fields.technology)
           formData.append('title', this.fields.title)
+          formData.append('href', this.fields.href)
           this.addWork(formData)
           console.log('Данные отправлены')
           this.fields.title=''
           this.fields.technology=''
-          this.fields.file=''
+          this.fields.file='',
+          this.fields.href=''
           this.validation.reset();
         }else{
         }

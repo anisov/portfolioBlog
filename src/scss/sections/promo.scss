@@ -17,7 +17,9 @@
 .promo__img{
     width: 141px;
     height: 141px;
-    border-radius: 100%
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 .promo__my-img{
     @extend .promo__img

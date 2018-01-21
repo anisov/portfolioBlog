@@ -9,11 +9,15 @@ const mongoose = require('mongoose'),
         },
         tech: {
             type: Array,
-            required: [true, 'Укажите содержимое статьи']
+            required: [true, 'Укажите технологии']
         },
         image: {
             type: String,
-            required: [true, 'Укажите содержимое статьи']
+            required: [true, 'Загрузите картинку']
+        },
+        href: {
+            type: String,
+            required: [true, 'Укажите ссылку']
         }
     });
 mongoose.model('work', workSchema);

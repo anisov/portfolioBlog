@@ -28,6 +28,21 @@
           )
         .blog-item__error {{validation.firstError('fields.text')}}
         .blog__row
+          textarea.blog__textarea(
+            type="text",
+            v-model="fields.code"
+            placeholder="Код"
+          ).blog__input
+        .blog-item__error {{validation.firstError('fields.code')}}
+        .blog__row
+          app-input(
+            type="text",
+            v-model="fields.href"
+            :nothing='fields.href'
+            placeholder="Ссылка"
+          ).blog__input
+        .blog-item__error {{validation.firstError('fields.href')}}
+        .blog__row
           app-button(
             title="Добавить"
             @click="addPost"
@@ -39,6 +54,8 @@
             .blog__post-title {{post.title}}
             .blog__post-date {{post.date}}
             .blog__post-text {{post.text}}
+            .blog__post-code {{post.code}}
+            .blog__post-code {{post.href}}
 </template>
 
 <script>
@@ -62,7 +79,9 @@ export default {
       fields: {
         title: '',
         date: '',
-        text: ''
+        text: '',
+        code: '',
+        href: ''
       },
     }
   },
@@ -75,6 +94,8 @@ export default {
           this.fields.title=''
           this.fields.date=''
           this.fields.text=''
+          this.fields.code=''
+          this.fields.href=''
           this.validation.reset();
         }
       })

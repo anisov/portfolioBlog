@@ -75,6 +75,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 app.listen(config.http.port, config.http.host, () => {
-  console.log(`Сервер запущен : ${config.http.host}:${config.http.port}!`);
+  console.log(`Сервер запущен1 : ${config.http.host}:${config.http.port}!`);
 });
 module.exports = app;

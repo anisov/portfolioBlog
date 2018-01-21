@@ -19,5 +19,8 @@ const mongoose = require('mongoose'),
         code: {
             type: String,
         },
+        href: {
+            type: String,
+        },
     });
 mongoose.model('blog', BlogSchema);

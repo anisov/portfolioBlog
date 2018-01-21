@@ -40,5 +40,6 @@ block main-content
                         if (index.code)
                             pre.blog__code.line-numbers.language-js
                                 code.language-js!= index.code
-                           
+                        if (index.href)
+                            a.blog__button(href=`${index.href}`) Читать Далее на habrahabr.ru
     include ../includes/footer                              

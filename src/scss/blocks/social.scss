@@ -6,6 +6,9 @@
     width: 31px;
     height: 17px;
     margin: 0 27px 0 0;
+    &:nth-child(2) {
+        margin-right: 14px;
+    }
     &:last-child{
         margin-right: 0;
     }
@@ -26,12 +29,12 @@
         width: 26px;
         height: 22px;
     }
-    &--in{
-        width: 24px;
+    &--facebook{
+        width: 28px;
         height: 22px;
     }
     &:hover{
-        transition: .4s;  
+        transition: .4s;
         fill:#4e8839;
         opacity: 1;
     }
@@ -57,11 +60,11 @@
             height: 17px;
         }
     }
-    &--in{
-        width: 24px;
+    &--facebook{
+        width: 26px;
         height: 22px;
         @include iphones{
-            width: 19px;
+            width: 21px;
             height: 17px;
         }
     }

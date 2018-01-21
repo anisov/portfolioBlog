@@ -16,7 +16,8 @@ module.exports.createArticle = (req, res) => {
         title: req.body.title,
         date: new Date(req.body.date),
         body: req.body.text,
-        code: req.body.code
+        code: req.body.code,
+        href: req.body.href
     });
 
     item
@@ -39,7 +40,8 @@ module.exports.editArticle = (req, res) => {
         title: req.body.title,
         date: new Date(req.body.date),
         body: req.body.text,
-        code: req.body.code
+        code: req.body.code,
+        href: req.body.href
     };
 
     const Model = mongoose.model('blog');

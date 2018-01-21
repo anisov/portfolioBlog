@@ -18,11 +18,11 @@ block main-content
                 .slider__title
                     .sub-title {{slider.title}}
                 .slider__technologies
-                    span(v-for = 'tech in slider.tech ') {{tech}}, 
+                    span(v-for = 'tech in slider.tech ') {{tech}} 
                 .slider__elem
                     .slider__decorate
                         +svgIcon('slider__svg-link', 'link')
-                    a.slider__button(href='/') Посмотреть сайт
+                    a.slider__button(:href="slider.href") Посмотреть сайт
             .slider__display
                 .slider__work.slider__work--active
                     img.slider__site(:src="slider.image", alt="Моя работа")  

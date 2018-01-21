@@ -40,7 +40,8 @@
     width: 141px;
     height: 141px;
     border-radius: 100%;
-    background: url('../img/welcome/people-one.jpg') center center no-repeat ;
+    background: url('../img/welcome/people-one.jpg') top no-repeat ;
+    background-size: cover;
 }
 .entry__name{
     text-align: center;

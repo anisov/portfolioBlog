@@ -5,7 +5,7 @@ if (document.querySelector('.js-form-send')) {
       el: '.js-form-send',
       mixins: [require('simple-vue-validator').mixin],
       validators: {
-          name(value){
+        name(value){
           return Validator.value(value).required("Поле должно быть заполнено");
         },
         email(value){
